@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images and Media - HTML Learning Topics</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Images and Media</h1>
+    </header>
+
+    <main class="topic-page">
+        <nav class="topic-nav">
+            <a href="links-navigation.html">← Previous: Links & Navigation</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="forms.html">Next: Forms →</a>
+        </nav>
+
+        <div class="topic-content">
+            <h1>Images and Media</h1>
+
+            <h2>Basic Images</h2>
+            <p>The <code>&lt;img&gt;</code> element displays images:</p>
+
+            <div class="example-box">
+                <h3>Example: Basic Image</h3>
+                <pre><code>&lt;img src="image.jpg" alt="Description of the image"&gt;</code></pre>
+            </div>
+
+            <h2>Image Attributes</h2>
+            <ul>
+                <li><code>src</code> - Source URL of the image (required)</li>
+                <li><code>alt</code> - Alternative text for accessibility (required)</li>
+                <li><code>width</code> - Width in pixels</li>
+                <li><code>height</code> - Height in pixels</li>
+                <li><code>title</code> - Tooltip text</li>
+                <li><code>loading</code> - Loading behavior (lazy, eager)</li>
+            </ul>
+
+            <div class="example-box">
+                <h3>Example: Image with Attributes</h3>
+                <pre><code>&lt;img src="photo.jpg"
+     alt="Beautiful sunset over mountains"
+     width="600"
+     height="400"
+     title="Sunset Photo"
+     loading="lazy"&gt;</code></pre>
+            </div>
+
+            <h2>Responsive Images</h2>
+            <p>Make images adapt to different screen sizes:</p>
+
+            <div class="example-box">
+                <h3>Example: Responsive Image</h3>
+                <pre><code>&lt;img src="image-large.jpg"
+     srcset="image-small.jpg 480w,
+             image-medium.jpg 800w,
+             image-large.jpg 1200w"
+     sizes="(max-width: 480px) 100vw,
+            (max-width: 800px) 50vw,
+            25vw"
+     alt="Responsive image"&gt;</code></pre>
+            </div>
+
+            <h2>Figure and Caption</h2>
+            <p>Group images with captions using semantic elements:</p>
+
+            <div class="example-box">
+                <h3>Example: Figure with Caption</h3>
+                <pre><code>&lt;figure&gt;
+    &lt;img src="chart.png" alt="Sales data chart"&gt;
+    &lt;figcaption&gt;
+        Sales increased by 25% in the last quarter
+    &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+            </div>
+
+            <h2>Audio Elements</h2>
+            <p>Embed audio content with the <code>&lt;audio&gt;</code> element:</p>
+
+            <div class="example-box">
+                <h3>Example: Audio Player</h3>
+                <pre><code>&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+            </div>
+
+            <h2>Audio Attributes</h2>
+            <ul>
+                <li><code>controls</code> - Show playback controls</li>
+                <li><code>autoplay</code> - Start playing automatically</li>
+                <li><code>loop</code> - Repeat the audio</li>
+                <li><code>muted</code> - Start muted</li>
+                <li><code>preload</code> - How much to preload (none, metadata, auto)</li>
+            </ul>
+
+            <h2>Video Elements</h2>
+            <p>Embed video content with the <code>&lt;video&gt;</code> element:</p>
+
+            <div class="example-box">
+                <h3>Example: Video Player</h3>
+                <pre><code>&lt;video width="640" height="360" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    &lt;track src="subtitles.vtt" kind="subtitles" srclang="en" label="English"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;</code></pre>
+            </div>
+
+            <h2>Video Attributes</h2>
+            <ul>
+                <li><code>controls</code> - Show playback controls</li>
+                <li><code>autoplay</code> - Start playing automatically</li>
+                <li><code>loop</code> - Repeat the video</li>
+                <li><code>muted</code> - Start muted</li>
+                <li><code>poster</code> - Image to show before playing</li>
+                <li><code>preload</code> - How much to preload</li>
+            </ul>
+
+            <h2>Embedded Content</h2>
+            <p>Embed external content using various elements:</p>
+
+            <div class="example-box">
+                <h3>Example: Embedded Content</h3>
+                <pre><code>&lt;!-- YouTube video --&gt;
+&lt;iframe width="560" height="315"
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen&gt;
+&lt;/iframe&gt;
+
+&lt;!-- Google Maps --&gt;
+&lt;iframe src="https://www.google.com/maps/embed?pb=..."
+        width="600" height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"&gt;
+&lt;/iframe&gt;</code></pre>
+            </div>
+
+            <h2>Object and Embed</h2>
+            <p>Alternative ways to embed content:</p>
+
+            <div class="example-box">
+                <h3>Example: Object and Embed</h3>
+                <pre><code>&lt;!-- PDF document --&gt;
+&lt;object data="document.pdf" type="application/pdf" width="600" height="400"&gt;
+    &lt;p&gt;Your browser doesn't support PDFs.
+       &lt;a href="document.pdf"&gt;Download the PDF&lt;/a&gt;.
+    &lt;/p&gt;
+&lt;/object&gt;
+
+&lt;!-- Flash content (deprecated) --&gt;
+&lt;embed src="animation.swf" width="400" height="300"&gt;</code></pre>
+            </div>
+
+            <h2>Media Best Practices</h2>
+            <ul>
+                <li>Always include meaningful <code>alt</code> text for images</li>
+                <li>Optimize image file sizes for web performance</li>
+                <li>Use appropriate image formats (JPEG, PNG, WebP, SVG)</li>
+                <li>Provide multiple audio/video formats for browser compatibility</li>
+                <li>Use lazy loading for images below the fold</li>
+                <li>Include fallback content for unsupported media</li>
+                <li>Consider accessibility (captions, audio descriptions)</li>
+                <li>Test media elements across different browsers</li>
+            </ul>
+        </div>
+
+        <nav class="topic-nav">
+            <a href="links-navigation.html">← Previous: Links & Navigation</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="forms.html">Next: Forms →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Engr. Nelsonjan E. Perez, PSAU, SPCF, CCA Instructor</p>
+    </footer>
+</body>
+</html>

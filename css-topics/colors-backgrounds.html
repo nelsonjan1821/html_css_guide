@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors & Backgrounds - HTML & CSS Learning Topics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Demo styles for color examples */
+        .color-demo {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            text-align: center;
+            font-weight: bold;
+        }
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .color-swatch {
+            width: 100%;
+            height: 60px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            border: 2px solid #333;
+        }
+        .gradient-demo {
+            height: 100px;
+            margin: 10px 0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .background-demo {
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 2px solid #0C2292;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Colors & Backgrounds</h1>
+    </header>
+
+    <main class="topic-page">
+        <nav class="topic-nav">
+            <a href="css-introduction.html">← Previous: CSS Introduction</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="typography.html">Next: Typography →</a>
+        </nav>
+
+        <div class="topic-content">
+            <h1>CSS Colors & Backgrounds</h1>
+
+            <h2>Introduction</h2>
+            <p>Colors and backgrounds are fundamental to web design. They create visual hierarchy, convey meaning, establish brand identity, and enhance user experience. CSS provides multiple ways to specify colors and create stunning background effects.</p>
+
+            <h2>CSS Color Values</h2>
+            <p>CSS supports several ways to specify colors:</p>
+
+            <h3>1. Color Names</h3>
+            <p>CSS provides 147 predefined color names:</p>
+
+            <div class="example-box">
+                <h3>Example: Named Colors</h3>
+                <pre><code>h1 { color: red; }
+p { color: blue; }
+div { background-color: yellow; }</code></pre>
+
+                <h4>Result:</h4>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background-color: red;">red</div>
+                    <div class="color-swatch" style="background-color: blue;">blue</div>
+                    <div class="color-swatch" style="background-color: green;">green</div>
+                    <div class="color-swatch" style="background-color: orange;">orange</div>
+                    <div class="color-swatch" style="background-color: purple;">purple</div>
+                    <div class="color-swatch" style="background-color: brown;">brown</div>
+                </div>
+            </div>
+
+            <h3>2. Hexadecimal Colors</h3>
+            <p>Six-digit hex codes represent RGB values (#RRGGBB):</p>
+
+            <div class="example-box">
+                <h3>Example: Hex Colors</h3>
+                <pre><code>h1 { color: #0C2292; }      /* Our blue theme */
+p { color: #E8BB17; }       /* Our gold theme */
+div { background-color: #FFFFFF; } /* White */</code></pre>
+
+                <h4>Result:</h4>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background-color: #0C2292;">#0C2292</div>
+                    <div class="color-swatch" style="background-color: #E8BB17;">#E8BB17</div>
+                    <div class="color-swatch" style="background-color: #FF0000;">#FF0000</div>
+                    <div class="color-swatch" style="background-color: #00FF00;">#00FF00</div>
+                    <div class="color-swatch" style="background-color: #0000FF;">#0000FF</div>
+                    <div class="color-swatch" style="background-color: #000000; border-color: #E8BB17;">#000000</div>
+                </div>
+
+                <h4>Short Hex Notation:</h4>
+                <pre><code>#F00 = #FF0000 (red)
+#0F0 = #00FF00 (green)
+#00F = #0000FF (blue)</code></pre>
+            </div>
+
+            <h3>3. RGB Colors</h3>
+            <p>RGB values use red, green, and blue components (0-255):</p>
+
+            <div class="example-box">
+                <h3>Example: RGB Colors</h3>
+                <pre><code>h1 { color: rgb(12, 34, 146); }        /* Same as #0C2292 */
+p { color: rgb(232, 187, 23); }        /* Same as #E8BB17 */
+div { background-color: rgb(255, 0, 0); } /* Red */</code></pre>
+
+                <h4>Result:</h4>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background-color: rgb(12, 34, 146);">rgb(12,34,146)</div>
+                    <div class="color-swatch" style="background-color: rgb(232, 187, 23);">rgb(232,187,23)</div>
+                    <div class="color-swatch" style="background-color: rgb(255, 0, 0);">rgb(255,0,0)</div>
+                    <div class="color-swatch" style="background-color: rgb(0, 255, 0);">rgb(0,255,0)</div>
+                    <div class="color-swatch" style="background-color: rgb(0, 0, 255);">rgb(0,0,255)</div>
+                    <div class="color-swatch" style="background-color: rgb(128, 128, 128);">rgb(128,128,128)</div>
+                </div>
+            </div>
+
+            <h3>4. RGBA Colors (with Transparency)</h3>
+            <p>RGBA adds an alpha channel for transparency (0.0 to 1.0):</p>
+
+            <div class="example-box">
+                <h3>Example: RGBA Colors</h3>
+                <pre><code>.overlay { background-color: rgba(12, 34, 146, 0.8); }  /* 80% opaque */
+.highlight { background-color: rgba(232, 187, 23, 0.3); } /* 30% opaque */</code></pre>
+
+                <h4>Result:</h4>
+                <div style="position: relative; background: linear-gradient(45deg, #ff6b6b, #4ecdc4); padding: 20px; border-radius: 10px;">
+                    <div style="background-color: rgba(12, 34, 146, 0.9); padding: 15px; margin: 10px 0; border-radius: 5px; color: white; text-align: center;">rgba(12, 34, 146, 0.9) - 90% Opaque</div>
+                    <div style="background-color: rgba(232, 187, 23, 0.7); padding: 15px; margin: 10px 0; border-radius: 5px; color: white; text-align: center;">rgba(232, 187, 23, 0.7) - 70% Opaque</div>
+                    <div style="background-color: rgba(255, 255, 255, 0.5); padding: 15px; margin: 10px 0; border-radius: 5px; color: black; text-align: center;">rgba(255, 255, 255, 0.5) - 50% Opaque</div>
+                </div>
+            </div>
+
+            <h3>5. HSL Colors</h3>
+            <p>HSL uses Hue (0-360°), Saturation (0-100%), and Lightness (0-100%):</p>
+
+            <div class="example-box">
+                <h3>Example: HSL Colors</h3>
+                <pre><code>h1 { color: hsl(225, 85%, 31%); }      /* Blue */
+p { color: hsl(45, 90%, 50%); }        /* Gold */
+div { background-color: hsl(0, 100%, 50%); } /* Red */</code></pre>
+
+                <h4>Result - HSL Color Wheel:</h4>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background-color: hsl(0, 100%, 50%);">hsl(0,100%,50%)</div>
+                    <div class="color-swatch" style="background-color: hsl(60, 100%, 50%);">hsl(60,100%,50%)</div>
+                    <div class="color-swatch" style="background-color: hsl(120, 100%, 50%);">hsl(120,100%,50%)</div>
+                    <div class="color-swatch" style="background-color: hsl(180, 100%, 50%);">hsl(180,100%,50%)</div>
+                    <div class="color-swatch" style="background-color: hsl(240, 100%, 50%);">hsl(240,100%,50%)</div>
+                    <div class="color-swatch" style="background-color: hsl(300, 100%, 50%);">hsl(300,100%,50%)</div>
+                </div>
+            </div>
+
+            <h2>Background Properties</h2>
+
+            <h3>Background Color</h3>
+            <div class="example-box">
+                <h3>Example: Background Colors</h3>
+                <pre><code>.blue-bg { background-color: #0C2292; }
+.gold-bg { background-color: #E8BB17; }
+.gradient-bg { background: linear-gradient(45deg, #0C2292, #E8BB17); }</code></pre>
+
+                <h4>Result:</h4>
+                <div class="background-demo" style="background-color: #0C2292;">Background Color: #0C2292</div>
+                <div class="background-demo" style="background-color: #E8BB17; color: #0C2292;">Background Color: #E8BB17</div>
+            </div>
+
+            <h3>Linear Gradients</h3>
+            <div class="example-box">
+                <h3>Example: Linear Gradients</h3>
+                <pre><code>/* Basic gradient */
+.gradient1 { background: linear-gradient(to right, #0C2292, #E8BB17); }
+
+/* Angled gradient */
+.gradient2 { background: linear-gradient(45deg, #0C2292, #E8BB17); }
+
+/* Multi-color gradient */
+.gradient3 { background: linear-gradient(90deg, #0C2292, #E8BB17, #0C2292); }</code></pre>
+
+                <h4>Result:</h4>
+                <div class="gradient-demo" style="background: linear-gradient(to right, #0C2292, #E8BB17);">Linear Gradient (to right)</div>
+                <div class="gradient-demo" style="background: linear-gradient(45deg, #0C2292, #E8BB17);">Linear Gradient (45deg)</div>
+                <div class="gradient-demo" style="background: linear-gradient(90deg, #0C2292, #E8BB17, #0C2292);">Multi-color Gradient</div>
+            </div>
+
+            <h3>Radial Gradients</h3>
+            <div class="example-box">
+                <h3>Example: Radial Gradients</h3>
+                <pre><code>/* Circular gradient */
+.radial1 { background: radial-gradient(circle, #0C2292, #E8BB17); }
+
+/* Elliptical gradient */
+.radial2 { background: radial-gradient(ellipse, #E8BB17, #0C2292); }</code></pre>
+
+                <h4>Result:</h4>
+                <div class="gradient-demo" style="background: radial-gradient(circle, #0C2292, #E8BB17);">Radial Gradient (circle)</div>
+                <div class="gradient-demo" style="background: radial-gradient(ellipse, #E8BB17, #0C2292);">Radial Gradient (ellipse)</div>
+            </div>
+
+            <h3>Background Images</h3>
+            <div class="example-box">
+                <h3>Example: Background Images</h3>
+                <pre><code>/* Background image */
+.bg-image {
+    background-image: url('pattern.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}</code></pre>
+
+                <h4>Background Properties:</h4>
+                <ul>
+                    <li><code>background-repeat:</code> repeat, no-repeat, repeat-x, repeat-y</li>
+                    <li><code>background-position:</code> center, top, bottom, left, right, or specific values</li>
+                    <li><code>background-size:</code> cover, contain, or specific dimensions</li>
+                    <li><code>background-attachment:</code> scroll, fixed</li>
+                </ul>
+            </div>
+
+            <h2>Color Combinations</h2>
+            <div class="example-box">
+                <h3>Example: Our Theme Colors in Action</h3>
+                <pre><code>.primary-button {
+    background-color: #0C2292;
+    color: #FFFFFF;
+    border: 2px solid #E8BB17;
+    padding: 12px 24px;
+    border-radius: 6px;
+}
+
+.secondary-button {
+    background-color: #E8BB17;
+    color: #0C2292;
+    border: 2px solid #0C2292;
+    padding: 12px 24px;
+    border-radius: 6px;
+}</code></pre>
+
+                <h4>Result:</h4>
+                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap; margin: 15px 0;">
+                    <button style="background-color: #0C2292; color: #FFFFFF; border: 2px solid #E8BB17; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Primary Button</button>
+                    <button style="background-color: #E8BB17; color: #0C2292; border: 2px solid #0C2292; padding: 12px 24px; border-radius: 6px; cursor: pointer;">Secondary Button</button>
+                </div>
+            </div>
+
+            <h2>Practical Color Tips</h2>
+
+            <h3>1. Color Accessibility</h3>
+            <div class="example-box">
+                <h3>Good vs Bad Contrast:</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0;">
+                    <div style="background-color: #FFFF00; color: #FFFFFF; padding: 15px; text-align: center; border-radius: 5px;">
+                        ❌ Bad Contrast<br>Yellow + White
+                    </div>
+                    <div style="background-color: #0C2292; color: #FFFFFF; padding: 15px; text-align: center; border-radius: 5px;">
+                        ✅ Good Contrast<br>Blue + White
+                    </div>
+                </div>
+            </div>
+
+            <h3>2. Color Psychology</h3>
+            <div class="example-box">
+                <ul>
+                    <li><strong style="color: #0C2292;">Blue (#0C2292):</strong> Trust, professionalism, stability</li>
+                    <li><strong style="color: #E8BB17;">Gold (#E8BB17):</strong> Premium, excellence, achievement</li>
+                    <li><strong style="color: #FF0000;">Red:</strong> Urgency, importance, energy</li>
+                    <li><strong style="color: #00AA00;">Green:</strong> Success, growth, nature</li>
+                    <li><strong style="color: #FFA500;">Orange:</strong> Enthusiasm, creativity, warmth</li>
+                </ul>
+            </div>
+
+            <h3>3. Creating Color Schemes</h3>
+            <div class="example-box">
+                <h3>Monochromatic Scheme (Blue variations):</h3>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background-color: #051146;">Dark Blue</div>
+                    <div class="color-swatch" style="background-color: #0C2292;">Primary Blue</div>
+                    <div class="color-swatch" style="background-color: #1a3ba3;">Medium Blue</div>
+                    <div class="color-swatch" style="background-color: #4d6bb8;">Light Blue</div>
+                    <div class="color-swatch" style="background-color: #8fa4d3;">Lighter Blue</div>
+                </div>
+
+                <h3>Complementary Scheme (Blue + Orange):</h3>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background-color: #0C2292;">Blue</div>
+                    <div class="color-swatch" style="background-color: #ff7300;">Orange</div>
+                    <div class="color-swatch" style="background-color: #E8BB17;">Gold</div>
+                    <div class="color-swatch" style="background-color: #ff9933;">Light Orange</div>
+                </div>
+            </div>
+
+            <h2>Modern CSS Color Features</h2>
+
+            <h3>CSS Custom Properties (Variables)</h3>
+            <div class="example-box">
+                <h3>Example: Color Variables</h3>
+                <pre><code>:root {
+    --primary-blue: #0C2292;
+    --accent-gold: #E8BB17;
+    --text-white: #FFFFFF;
+}
+
+.button {
+    background-color: var(--primary-blue);
+    color: var(--text-white);
+    border: 2px solid var(--accent-gold);
+}</code></pre>
+            </div>
+
+            <h2>Best Practices</h2>
+            <div class="example-box">
+                <ul>
+                    <li>✅ <strong>Maintain good contrast</strong> for accessibility (4.5:1 ratio minimum)</li>
+                    <li>✅ <strong>Use consistent color schemes</strong> throughout your design</li>
+                    <li>✅ <strong>Test colors on different devices</strong> and lighting conditions</li>
+                    <li>✅ <strong>Consider color blindness</strong> - don't rely on color alone for meaning</li>
+                    <li>✅ <strong>Use CSS variables</strong> for maintainable color systems</li>
+                    <li>✅ <strong>Keep your palette limited</strong> - 2-5 main colors work best</li>
+                    <li>❌ <strong>Avoid bright colors on large areas</strong> - they can cause eye strain</li>
+                    <li>❌ <strong>Don't use too many colors</strong> - it creates visual chaos</li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="topic-nav">
+            <a href="css-introduction.html">← Previous: CSS Introduction</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="typography.html">Next: Typography →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Engr. Nelsonjan E. Perez, PSAU, SPCF, CCA Instructor</p>
+    </footer>
+</body>
+</html>

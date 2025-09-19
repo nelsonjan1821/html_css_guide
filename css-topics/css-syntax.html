@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Syntax & Selectors - HTML & CSS Learning Topics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Demo styles for examples */
+        .syntax-demo {
+            background: rgba(232, 187, 23, 0.1);
+            border: 2px solid #E8BB17;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .selector-playground {
+            background: #ffffff;
+            border: 2px solid #0C2292;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .demo-element {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .demo-class {
+            background-color: rgba(232, 187, 23, 0.2);
+            color: #0C2292;
+            font-weight: bold;
+        }
+        .demo-id {
+            background-color: rgba(12, 34, 146, 0.2);
+            color: #0C2292;
+            border: 2px solid #0C2292;
+        }
+        .highlight {
+            background-color: #E8BB17;
+            color: white;
+            padding: 3px 6px;
+            border-radius: 3px;
+        }
+        .specificity-demo {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+        }
+        .low-specificity {
+            background-color: #f0f0f0;
+            color: #666;
+        }
+        .medium-specificity {
+            background-color: rgba(232, 187, 23, 0.3) !important;
+            color: #0C2292 !important;
+        }
+        .high-specificity {
+            background-color: #0C2292 !important;
+            color: white !important;
+        }
+        .combinator-demo {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .combinator-demo > p {
+            background-color: rgba(232, 187, 23, 0.2);
+            padding: 5px;
+        }
+        .combinator-demo p + p {
+            background-color: rgba(12, 34, 146, 0.2);
+        }
+        .pseudo-demo:hover {
+            background-color: #E8BB17;
+            color: white;
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+        .pseudo-demo:nth-child(odd) {
+            background-color: rgba(232, 187, 23, 0.1);
+        }
+        .pseudo-demo:nth-child(even) {
+            background-color: rgba(12, 34, 146, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Syntax & Selectors</h1>
+    </header>
+
+    <main class="topic-page">
+        <nav class="topic-nav">
+            <a href="css-introduction.html">← Previous: CSS Introduction</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="adding-css.html">Next: Adding CSS →</a>
+        </nav>
+
+        <div class="topic-content">
+            <h1>CSS Syntax & Selectors</h1>
+
+            <h2>CSS Syntax</h2>
+            <p>CSS syntax consists of <strong>rules</strong> that tell the browser how to style HTML elements. Each rule has two main parts: a <strong>selector</strong> and a <strong>declaration block</strong>.</p>
+
+            <div class="example-box">
+                <h3>Basic CSS Syntax Structure:</h3>
+                <pre><code>selector {
+    property: value;
+    property: value;
+}</code></pre>
+
+                <h4>Anatomy of a CSS Rule:</h4>
+                <pre><code>h1 {                    /* ← Selector */
+    color: #0C2292;     /* ← Property: Value; */
+    font-size: 2rem;    /* ← Property: Value; */
+}                       /* ← Declaration Block */</code></pre>
+            </div>
+
+            <h3>CSS Rule Components</h3>
+            <ul>
+                <li><strong>Selector:</strong> Targets which HTML elements to style</li>
+                <li><strong>Property:</strong> The aspect you want to change (color, size, etc.)</li>
+                <li><strong>Value:</strong> How you want to change it</li>
+                <li><strong>Declaration:</strong> A property-value pair</li>
+                <li><strong>Declaration Block:</strong> All declarations wrapped in curly braces { }</li>
+            </ul>
+
+            <div class="syntax-demo">
+                <h4>✅ Correct Syntax:</h4>
+                <pre><code>p {
+    color: blue;
+    font-size: 16px;
+    margin: 10px;
+}</code></pre>
+
+                <h4>❌ Common Syntax Errors:</h4>
+                <pre><code>/* Missing semicolon */
+p {
+    color: blue
+    font-size: 16px;
+}
+
+/* Missing closing brace */
+p {
+    color: blue;
+    font-size: 16px;
+
+/* Missing property name */
+p {
+    blue;
+    font-size: 16px;
+}</code></pre>
+            </div>
+
+            <h2>Types of CSS Selectors</h2>
+
+            <h3>1. Element Selectors</h3>
+            <p>Select all elements of a specific HTML tag:</p>
+
+            <div class="example-box">
+                <h3>Example: Element Selectors</h3>
+                <pre><code>/* Selects ALL h1 elements */
+h1 {
+    color: #0C2292;
+    font-size: 2rem;
+}
+
+/* Selects ALL paragraph elements */
+p {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Selects ALL div elements */
+div {
+    background-color: #f8f9fa;
+    padding: 15px;
+}</code></pre>
+
+                <h4>Result:</h4>
+                <div class="selector-playground">
+                    <h2 style="color: #0C2292; font-size: 2rem; margin: 0 0 10px 0;">This is an h2 element</h2>
+                    <p style="color: #333; line-height: 1.6; margin: 0 0 10px 0;">This is a paragraph element.</p>
+                    <div style="background-color: #f8f9fa; padding: 15px; margin: 10px 0;">This is a div element.</div>
+                </div>
+            </div>
+
+            <h3>2. Class Selectors</h3>
+            <p>Select elements with a specific class attribute using a dot (.):</p>
+
+            <div class="example-box">
+                <h3>Example: Class Selectors</h3>
+                <pre><code>/* HTML */
+&lt;p class="highlight"&gt;This paragraph has a class&lt;/p&gt;
+&lt;p&gt;This paragraph has no class&lt;/p&gt;
+&lt;div class="highlight"&gt;This div also has the same class&lt;/div&gt;
+
+/* CSS */
+.highlight {
+    background-color: #E8BB17;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}</code></pre>
+
+                <h4>Result:</h4>
+                <div class="selector-playground">
+                    <p class="demo-class">This paragraph has the "highlight" class</p>
+                    <p class="demo-element">This paragraph has no class</p>
+                    <div class="demo-class">This div also has the "highlight" class</div>
+                </div>
+            </div>
+
+            <h3>3. ID Selectors</h3>
+            <p>Select a unique element with a specific ID using a hash (#):</p>
+
+            <div class="example-box">
+                <h3>Example: ID Selectors</h3>
+                <pre><code>/* HTML */
+&lt;p id="special"&gt;This paragraph has a unique ID&lt;/p&gt;
+&lt;p&gt;This paragraph has no ID&lt;/p&gt;
+
+/* CSS */
+#special {
+    background-color: rgba(12, 34, 146, 0.2);
+    color: #0C2292;
+    border: 2px solid #0C2292;
+    padding: 15px;
+    font-weight: bold;
+}</code></pre>
+
+                <h4>Result:</h4>
+                <div class="selector-playground">
+                    <p class="demo-id">This paragraph has the "special" ID</p>
+                    <p class="demo-element">This paragraph has no ID</p>
+                </div>
+
+                <h4>⚠️ Important Note:</h4>
+                <p>IDs must be unique - only one element per page can have the same ID!</p>
+            </div>
+
+            <h3>4. Universal Selector</h3>
+            <p>Select ALL elements using an asterisk (*):</p>
+
+            <div class="example-box">
+                <h3>Example: Universal Selector</h3>
+                <pre><code>/* Applies to ALL elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}</code></pre>
+                <p><strong>Common Use:</strong> CSS resets to remove default browser styling.</p>
+            </div>
+
+            <h3>5. Attribute Selectors</h3>
+            <p>Select elements based on their attributes:</p>
+
+            <div class="example-box">
+                <h3>Example: Attribute Selectors</h3>
+                <pre><code>/* Select inputs with type="text" */
+input[type="text"] {
+    border: 2px solid #0C2292;
+    padding: 8px;
+}
+
+/* Select links with target="_blank" */
+a[target="_blank"] {
+    color: #E8BB17;
+    font-weight: bold;
+}
+
+/* Select elements with a specific class */
+[class="highlight"] {
+    background-color: yellow;
+}</code></pre>
+
+                <h4>Attribute Selector Variations:</h4>
+                <ul>
+                    <li><code>[attribute]</code> - Has the attribute</li>
+                    <li><code>[attribute="value"]</code> - Exact value match</li>
+                    <li><code>[attribute^="value"]</code> - Starts with value</li>
+                    <li><code>[attribute$="value"]</code> - Ends with value</li>
+                    <li><code>[attribute*="value"]</code> - Contains value</li>
+                </ul>
+            </div>
+
+            <h2>Pseudo-Classes</h2>
+            <p>Target elements in specific states or positions:</p>
+
+            <div class="example-box">
+                <h3>Example: Common Pseudo-Classes</h3>
+                <pre><code>/* Hover effect */
+button:hover {
+    background-color: #E8BB17;
+    transform: translateY(-2px);
+}
+
+/* Focus state for form inputs */
+input:focus {
+    outline: 2px solid #0C2292;
+    border-color: #0C2292;
+}
+
+/* First child element */
+li:first-child {
+    font-weight: bold;
+    color: #0C2292;
+}
+
+/* Every odd element */
+tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}</code></pre>
+
+                <h4>Result (hover over these boxes):</h4>
+                <div class="selector-playground">
+                    <div class="demo-element pseudo-demo">Hover over me! (Box 1 - odd)</div>
+                    <div class="demo-element pseudo-demo">Hover over me! (Box 2 - even)</div>
+                    <div class="demo-element pseudo-demo">Hover over me! (Box 3 - odd)</div>
+                    <div class="demo-element pseudo-demo">Hover over me! (Box 4 - even)</div>
+                </div>
+            </div>
+
+            <h3>Popular Pseudo-Classes</h3>
+            <ul>
+                <li><code>:hover</code> - When mouse is over element</li>
+                <li><code>:focus</code> - When element has focus</li>
+                <li><code>:active</code> - When element is being clicked</li>
+                <li><code>:first-child</code> - First child element</li>
+                <li><code>:last-child</code> - Last child element</li>
+                <li><code>:nth-child(n)</code> - Nth child element</li>
+                <li><code>:not(selector)</code> - Elements that don't match selector</li>
+            </ul>
+
+            <h2>Combinators</h2>
+            <p>Combine selectors to target elements based on their relationships:</p>
+
+            <h3>1. Descendant Combinator (Space)</h3>
+            <div class="example-box">
+                <h3>Example: Descendant Combinator</h3>
+                <pre><code>/* Selects ALL p elements inside div elements */
+div p {
+    color: blue;
+    font-style: italic;
+}</code></pre>
+
+                <h4>HTML:</h4>
+                <pre><code>&lt;div&gt;
+    &lt;p&gt;This paragraph is inside a div&lt;/p&gt;
+    &lt;section&gt;
+        &lt;p&gt;This paragraph is also inside the div (nested)&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
+&lt;p&gt;This paragraph is NOT inside a div&lt;/p&gt;</code></pre>
+            </div>
+
+            <h3>2. Child Combinator (>)</h3>
+            <div class="example-box">
+                <h3>Example: Child Combinator</h3>
+                <pre><code>/* Selects ONLY direct children p elements of div */
+div > p {
+    background-color: rgba(232, 187, 23, 0.2);
+    padding: 10px;
+}</code></pre>
+
+                <h4>Result:</h4>
+                <div class="combinator-demo">
+                    <p>I'm a direct child of div (styled)</p>
+                    <section>
+                        <p>I'm a grandchild of div (not styled)</p>
+                    </section>
+                </div>
+            </div>
+
+            <h3>3. Adjacent Sibling Combinator (+)</h3>
+            <div class="example-box">
+                <h3>Example: Adjacent Sibling</h3>
+                <pre><code>/* Selects p that immediately follows another p */
+p + p {
+    margin-top: 20px;
+    background-color: rgba(12, 34, 146, 0.1);
+}</code></pre>
+
+                <h4>Result:</h4>
+                <div class="combinator-demo">
+                    <p>First paragraph (no special styling)</p>
+                    <p>Second paragraph (has special styling)</p>
+                    <p>Third paragraph (has special styling)</p>
+                </div>
+            </div>
+
+            <h2>CSS Specificity</h2>
+            <p>When multiple CSS rules target the same element, specificity determines which style wins:</p>
+
+            <div class="example-box">
+                <h3>Specificity Hierarchy (Highest to Lowest):</h3>
+                <ol>
+                    <li><strong>Inline styles</strong> (1000 points) - <code>style="color: red;"</code></li>
+                    <li><strong>IDs</strong> (100 points) - <code>#myId</code></li>
+                    <li><strong>Classes, attributes, pseudo-classes</strong> (10 points) - <code>.myClass</code>, <code>[type="text"]</code>, <code>:hover</code></li>
+                    <li><strong>Elements and pseudo-elements</strong> (1 point) - <code>div</code>, <code>p</code>, <code>::before</code></li>
+                </ol>
+
+                <h3>Specificity Examples:</h3>
+                <pre><code>/* Specificity: 1 (element) */
+p { color: black; }
+
+/* Specificity: 10 (class) */
+.highlight { color: blue; }
+
+/* Specificity: 100 (ID) */
+#special { color: red; }
+
+/* Specificity: 111 (ID + class + element) */
+div.highlight#special { color: green; }</code></pre>
+
+                <h4>Result (ID wins over class wins over element):</h4>
+                <div class="selector-playground">
+                    <p class="specificity-demo low-specificity">Element selector only (gray)</p>
+                    <p class="specificity-demo medium-specificity">Class selector (gold background)</p>
+                    <p class="specificity-demo high-specificity" id="high-spec">ID selector (blue background)</p>
+                </div>
+            </div>
+
+            <h2>Multiple Selectors</h2>
+            <p>Apply the same styles to multiple selectors using commas:</p>
+
+            <div class="example-box">
+                <h3>Example: Multiple Selectors</h3>
+                <pre><code>/* Apply same styles to multiple elements */
+h1, h2, h3 {
+    color: #0C2292;
+    font-family: Arial, sans-serif;
+}
+
+/* Apply same styles to multiple classes */
+.primary-button, .secondary-button, .danger-button {
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}</code></pre>
+            </div>
+
+            <h2>Practical Selector Examples</h2>
+
+            <div class="example-box">
+                <h3>Real-World Selector Combinations:</h3>
+                <pre><code>/* Navigation menu styling */
+nav ul li a {
+    text-decoration: none;
+    color: #0C2292;
+    padding: 10px 15px;
+}
+
+nav ul li a:hover {
+    background-color: #E8BB17;
+    color: white;
+}
+
+/* Form styling */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    border: 2px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #0C2292;
+    outline: none;
+}
+
+/* Card styling */
+.card:nth-child(odd) {
+    background-color: #f8f9fa;
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}</code></pre>
+            </div>
+
+            <h2>Best Practices</h2>
+
+            <div class="example-box">
+                <h3>✅ Do:</h3>
+                <ul>
+                    <li>Use <strong>classes</strong> for reusable styles</li>
+                    <li>Use <strong>IDs</strong> for unique elements only</li>
+                    <li>Keep specificity low when possible</li>
+                    <li>Use meaningful class names (e.g., <code>.primary-button</code> not <code>.blue-button</code>)</li>
+                    <li>Group related selectors together</li>
+                    <li>Use combinators to target specific relationships</li>
+                </ul>
+
+                <h3>❌ Don't:</h3>
+                <ul>
+                    <li>Overuse IDs - classes are usually better</li>
+                    <li>Use <code>!important</code> unless absolutely necessary</li>
+                    <li>Make selectors overly specific</li>
+                    <li>Use inline styles for main styling</li>
+                    <li>Use generic class names like <code>.red</code> or <code>.big</code></li>
+                </ul>
+            </div>
+
+            <h2>Quick Reference</h2>
+
+            <div class="syntax-demo">
+                <h3>Selector Cheat Sheet:</h3>
+                <pre><code>element          /* h1, p, div */
+.class           /* .highlight, .button */
+#id              /* #header, #main */
+*                /* All elements */
+[attribute]      /* [type], [href] */
+:pseudo-class    /* :hover, :focus */
+element element  /* div p (descendant) */
+element > element /* div > p (child) */
+element + element /* p + p (adjacent) */
+element, element  /* h1, h2 (multiple) */</code></pre>
+            </div>
+        </div>
+
+        <nav class="topic-nav">
+            <a href="css-introduction.html">← Previous: CSS Introduction</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="adding-css.html">Next: Adding CSS →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Engr. Nelsonjan E. Perez, PSAU, SPCF, CCA Instructor</p>
+    </footer>
+</body>
+</html>

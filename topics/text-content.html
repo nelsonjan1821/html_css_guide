@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text and Content - HTML Learning Topics</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Text and Content</h1>
+    </header>
+
+    <main class="topic-page">
+        <nav class="topic-nav">
+            <a href="basic-structure.html">← Previous: Basic Structure</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="lists.html">Next: Lists →</a>
+        </nav>
+
+        <div class="topic-content">
+            <h1>Text and Content Elements</h1>
+
+            <h2>Headings</h2>
+            <p>HTML provides six levels of headings, from <code>&lt;h1&gt;</code> (most important) to <code>&lt;h6&gt;</code> (least important):</p>
+
+            <div class="example-box">
+                <h3>Example: Headings</h3>
+                <pre><code>&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;h3&gt;Subsection Title&lt;/h3&gt;
+&lt;h4&gt;Sub-subsection Title&lt;/h4&gt;
+&lt;h5&gt;Minor Heading&lt;/h5&gt;
+&lt;h6&gt;Smallest Heading&lt;/h6&gt;</code></pre>
+            </div>
+
+            <h2>Paragraphs</h2>
+            <p>Use <code>&lt;p&gt;</code> tags to create paragraphs of text:</p>
+
+            <div class="example-box">
+                <h3>Example: Paragraphs</h3>
+                <pre><code>&lt;p&gt;This is the first paragraph.&lt;/p&gt;
+&lt;p&gt;This is the second paragraph with more text.&lt;/p&gt;</code></pre>
+            </div>
+
+            <h2>Line Breaks and Horizontal Rules</h2>
+            <ul>
+                <li><code>&lt;br&gt;</code> - Creates a line break</li>
+                <li><code>&lt;hr&gt;</code> - Creates a horizontal rule (divider line)</li>
+            </ul>
+
+            <div class="example-box">
+                <h3>Example: Breaks and Rules</h3>
+                <pre><code>&lt;p&gt;First line&lt;br&gt;Second line&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Content after the horizontal rule&lt;/p&gt;</code></pre>
+            </div>
+
+            <h2>Text Formatting</h2>
+            <p>HTML provides several elements for formatting text:</p>
+
+            <ul>
+                <li><code>&lt;strong&gt;</code> - Important text (bold)</li>
+                <li><code>&lt;em&gt;</code> - Emphasized text (italic)</li>
+                <li><code>&lt;b&gt;</code> - Bold text (visual only)</li>
+                <li><code>&lt;i&gt;</code> - Italic text (visual only)</li>
+                <li><code>&lt;u&gt;</code> - Underlined text</li>
+                <li><code>&lt;s&gt;</code> - Strikethrough text</li>
+                <li><code>&lt;mark&gt;</code> - Highlighted text</li>
+                <li><code>&lt;small&gt;</code> - Smaller text</li>
+                <li><code>&lt;sub&gt;</code> - Subscript</li>
+                <li><code>&lt;sup&gt;</code> - Superscript</li>
+            </ul>
+
+            <div class="example-box">
+                <h3>Example: Text Formatting</h3>
+                <pre><code>&lt;p&gt;This is &lt;strong&gt;important&lt;/strong&gt; text.&lt;/p&gt;
+&lt;p&gt;This is &lt;em&gt;emphasized&lt;/em&gt; text.&lt;/p&gt;
+&lt;p&gt;This is &lt;mark&gt;highlighted&lt;/mark&gt; text.&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O and E=mc&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</code></pre>
+            </div>
+
+            <h2>Quotations</h2>
+            <ul>
+                <li><code>&lt;blockquote&gt;</code> - Block quotations</li>
+                <li><code>&lt;q&gt;</code> - Inline quotations</li>
+                <li><code>&lt;cite&gt;</code> - Citations</li>
+            </ul>
+
+            <div class="example-box">
+                <h3>Example: Quotations</h3>
+                <pre><code>&lt;blockquote&gt;
+    This is a block quote that takes up
+    its own paragraph space.
+&lt;/blockquote&gt;
+
+&lt;p&gt;As Shakespeare said, &lt;q&gt;To be or not to be&lt;/q&gt;.&lt;/p&gt;
+
+&lt;p&gt;Reference: &lt;cite&gt;Hamlet by William Shakespeare&lt;/cite&gt;&lt;/p&gt;</code></pre>
+            </div>
+
+            <h2>Preformatted Text</h2>
+            <p>Use <code>&lt;pre&gt;</code> to preserve whitespace and formatting:</p>
+
+            <div class="example-box">
+                <h3>Example: Preformatted Text</h3>
+                <pre><code>&lt;pre&gt;
+    This    text    preserves
+        all    spacing
+            and    line breaks
+&lt;/pre&gt;</code></pre>
+            </div>
+
+            <h2>Code Elements</h2>
+            <ul>
+                <li><code>&lt;code&gt;</code> - Inline code</li>
+                <li><code>&lt;kbd&gt;</code> - Keyboard input</li>
+                <li><code>&lt;samp&gt;</code> - Sample output</li>
+                <li><code>&lt;var&gt;</code> - Variables</li>
+            </ul>
+
+            <div class="example-box">
+                <h3>Example: Code Elements</h3>
+                <pre><code>&lt;p&gt;Use the &lt;code&gt;console.log()&lt;/code&gt; function.&lt;/p&gt;
+&lt;p&gt;Press &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt; to copy.&lt;/p&gt;
+&lt;p&gt;Output: &lt;samp&gt;Hello World&lt;/samp&gt;&lt;/p&gt;
+&lt;p&gt;The variable &lt;var&gt;x&lt;/var&gt; equals 5.&lt;/p&gt;</code></pre>
+            </div>
+        </div>
+
+        <nav class="topic-nav">
+            <a href="basic-structure.html">← Previous: Basic Structure</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="lists.html">Next: Lists →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Engr. Nelsonjan E. Perez, PSAU, SPCF, CCA Instructor</p>
+    </footer>
+</body>
+</html>

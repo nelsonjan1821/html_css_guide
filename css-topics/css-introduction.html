@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Introduction - HTML & CSS Learning Topics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Demo styles for examples */
+        .demo-box {
+            background: rgba(232, 187, 23, 0.1);
+            border: 2px solid #E8BB17;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .before-css {
+            font-family: Times, serif;
+            background: #ffffff;
+            color: #333333;
+            padding: 15px;
+            border: 2px solid #cccccc;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .before-css h3 {
+            color: #333333;
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
+        .before-css p {
+            color: #333333;
+            margin: 0;
+            line-height: 1.4;
+        }
+        .after-css {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0C2292 0%, #1A3BA3 100%);
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(12, 34, 146, 0.3);
+            border: 2px solid #E8BB17;
+            margin: 10px 0;
+        }
+        .after-css h3 {
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .after-css p {
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.5;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .timeline {
+            border-left: 3px solid #E8BB17;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+        .timeline-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: rgba(232, 187, 23, 0.05);
+            border-radius: 5px;
+        }
+        .timeline-year {
+            font-weight: bold;
+            color: #0C2292;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Introduction</h1>
+    </header>
+
+    <main class="topic-page">
+        <nav class="topic-nav">
+            <a href="../index.html">← Back to Main</a>
+            <a href="css-syntax.html">Next: CSS Syntax →</a>
+        </nav>
+
+        <div class="topic-content">
+            <h1>Introduction to CSS</h1>
+
+            <h2>What is CSS?</h2>
+            <p><strong>CSS (Cascading Style Sheets)</strong> is a stylesheet language used to describe the presentation and visual appearance of HTML documents. While HTML provides the structure and content, CSS controls how that content looks and is laid out on the page.</p>
+
+            <div class="example-box">
+                <h3>CSS Stands For:</h3>
+                <ul>
+                    <li><strong>Cascading:</strong> Styles can be inherited and overridden in a specific order</li>
+                    <li><strong>Style:</strong> Controls the visual presentation</li>
+                    <li><strong>Sheets:</strong> Collections of style rules</li>
+                </ul>
+            </div>
+
+            <h2>Why Do We Need CSS?</h2>
+            <p>Before CSS, web pages were styled using HTML attributes and elements, which made code messy and hard to maintain. CSS separates content from presentation, offering numerous benefits:</p>
+
+            <div class="example-box">
+                <h3>Example: Before vs After CSS</h3>
+                <h4>❌ Before CSS (HTML only):</h4>
+                <div class="before-css">
+                    <h3>Welcome to My Website</h3>
+                    <p>This is plain HTML with no CSS styling. Notice how basic and unstyled it looks.</p>
+                </div>
+
+                <h4>✅ After CSS:</h4>
+                <div class="after-css">
+                    <h3>Welcome to My Website</h3>
+                    <p>This is the same HTML content but with CSS styling applied. Much more attractive and professional!</p>
+                </div>
+            </div>
+
+            <h2>Benefits of CSS</h2>
+            <ul>
+                <li><strong>Separation of Concerns:</strong> Content (HTML) separate from presentation (CSS)</li>
+                <li><strong>Consistency:</strong> Apply the same styles across multiple pages</li>
+                <li><strong>Maintainability:</strong> Change the look of an entire website by editing one CSS file</li>
+                <li><strong>Flexibility:</strong> Create responsive designs for different devices</li>
+                <li><strong>Performance:</strong> Faster loading times and smaller file sizes</li>
+                <li><strong>Accessibility:</strong> Better support for screen readers and assistive technologies</li>
+            </ul>
+
+            <h2>Brief History of CSS</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1994</div>
+                    <p><strong>CSS Concept:</strong> Håkon Wium Lie proposes the first CSS specification while working with Tim Berners-Lee at CERN.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1996</div>
+                    <p><strong>CSS1:</strong> First CSS specification released by W3C. Included basic properties for fonts, colors, and layout.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1998</div>
+                    <p><strong>CSS2:</strong> Added support for media types, positioning, and more selectors. Introduced concepts for print stylesheets.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1999</div>
+                    <p><strong>CSS2.1:</strong> Refined CSS2 with bug fixes and better browser compatibility. Became the stable standard for many years.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2011</div>
+                    <p><strong>CSS3:</strong> Modular approach with new features like animations, gradients, flexbox, and grid layout. Still evolving today.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <p><strong>Modern CSS:</strong> Continuous evolution with new features like CSS Grid, Custom Properties, and Container Queries.</p>
+                </div>
+            </div>
+
+            <h2>What Can CSS Do?</h2>
+            <div class="example-box">
+                <h3>CSS Controls:</h3>
+                <ul>
+                    <li><strong>Colors & Backgrounds:</strong> Text colors, background colors, gradients, images</li>
+                    <li><strong>Typography:</strong> Fonts, sizes, spacing, line height, text decoration</li>
+                    <li><strong>Layout:</strong> Positioning, spacing, alignment, responsive design</li>
+                    <li><strong>Size & Spacing:</strong> Width, height, margins, padding, borders</li>
+                    <li><strong>Visual Effects:</strong> Shadows, transitions, animations, transforms</li>
+                    <li><strong>Responsive Design:</strong> Different styles for different screen sizes</li>
+                </ul>
+            </div>
+
+            <h2>CSS in Action</h2>
+            <div class="example-box">
+                <h3>Example: Simple CSS Styling</h3>
+                <pre><code>&lt;!-- HTML --&gt;
+&lt;h1 class="main-title"&gt;Welcome to CSS&lt;/h1&gt;
+&lt;p class="intro-text"&gt;CSS makes web pages beautiful!&lt;/p&gt;</code></pre>
+
+                <pre><code>/* CSS */
+.main-title {
+    color: #0C2292;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.intro-text {
+    background-color: #E8BB17;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}</code></pre>
+
+                <h4>Result:</h4>
+                <div class="demo-box">
+                    <h1 style="color: #0C2292; font-size: 2rem; text-align: center; margin-bottom: 1rem;">Welcome to CSS</h1>
+                    <p style="background-color: #E8BB17; color: white; padding: 15px; border-radius: 5px; font-family: Arial, sans-serif; margin: 0;">CSS makes web pages beautiful!</p>
+                </div>
+            </div>
+
+            <h2>CSS Syntax Preview</h2>
+            <p>CSS uses a simple syntax consisting of selectors, properties, and values:</p>
+
+            <div class="example-box">
+                <h3>Basic CSS Structure:</h3>
+                <pre><code>selector {
+    property: value;
+    property: value;
+}</code></pre>
+
+                <h4>Real Example:</h4>
+                <pre><code>h1 {
+    color: blue;
+    font-size: 24px;
+    text-align: center;
+}</code></pre>
+            </div>
+
+            <h2>Types of CSS</h2>
+            <p>There are three ways to add CSS to HTML documents:</p>
+
+            <h3>1. Inline CSS</h3>
+            <p>CSS written directly in HTML elements using the <code>style</code> attribute:</p>
+            <pre><code>&lt;p style="color: red; font-size: 18px;"&gt;This is red text.&lt;/p&gt;</code></pre>
+
+            <h3>2. Internal CSS</h3>
+            <p>CSS written inside <code>&lt;style&gt;</code> tags in the HTML document's head:</p>
+            <pre><code>&lt;head&gt;
+    &lt;style&gt;
+        p { color: blue; }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+
+            <h3>3. External CSS</h3>
+            <p>CSS written in separate .css files and linked to HTML:</p>
+            <pre><code>&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;</code></pre>
+
+            <h2>CSS and Modern Web Development</h2>
+            <p>Today, CSS is essential for:</p>
+            <ul>
+                <li><strong>Responsive Web Design:</strong> Websites that work on all devices</li>
+                <li><strong>User Experience:</strong> Creating intuitive and attractive interfaces</li>
+                <li><strong>Performance:</strong> Optimizing loading times and rendering</li>
+                <li><strong>Accessibility:</strong> Ensuring websites work for everyone</li>
+                <li><strong>Maintainability:</strong> Keeping code organized and scalable</li>
+            </ul>
+
+            <h2>Getting Started</h2>
+            <div class="example-box">
+                <h3>To Start Learning CSS, You Need:</h3>
+                <ul>
+                    <li>✅ Basic HTML knowledge</li>
+                    <li>✅ A text editor (VS Code, Sublime Text, etc.)</li>
+                    <li>✅ A web browser for testing</li>
+                    <li>✅ Patience and practice!</li>
+                </ul>
+
+                <h3>What You'll Learn Next:</h3>
+                <ul>
+                    <li>CSS syntax and selectors</li>
+                    <li>How to add CSS to HTML</li>
+                    <li>Basic styling properties</li>
+                    <li>Layout and positioning</li>
+                    <li>Responsive design techniques</li>
+                </ul>
+            </div>
+
+            <h2>Fun Facts About CSS</h2>
+            <div class="example-box">
+                <ul>
+                    <li>🎨 CSS was originally called "CHSS" (Cascading HTML Style Sheets)</li>
+                    <li>🌐 The first website to use CSS was in 1994</li>
+                    <li>📱 CSS3 introduced features that eliminated the need for many JavaScript libraries</li>
+                    <li>🔥 CSS can create complex animations without any JavaScript</li>
+                    <li>🎯 Modern CSS can even detect user preferences like dark mode</li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="topic-nav">
+            <a href="../index.html">← Back to Main</a>
+            <a href="css-syntax.html">Next: CSS Syntax →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Engr. Nelsonjan E. Perez, PSAU, SPCF, CCA Instructor</p>
+    </footer>
+</body>
+</html>

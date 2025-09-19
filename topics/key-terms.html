@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Terms - HTML Learning Topics</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>HTML Key Terms</h1>
+    </header>
+
+    <main class="topic-page">
+        <nav class="topic-nav">
+            <a href="html-history.html">← Previous: HTML History</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="basic-structure.html">Next: Basic Structure →</a>
+        </nav>
+
+        <div class="topic-content">
+            <h1>HTML Key Terms and Glossary</h1>
+
+            <h2>Core Concepts</h2>
+
+            <dl>
+                <dt><strong>HTML (HyperText Markup Language)</strong></dt>
+                <dd>The standard markup language used to create web pages. It describes the structure and content of a document using elements and tags.</dd>
+
+                <dt><strong>Markup Language</strong></dt>
+                <dd>A system for annotating text to indicate its structure, formatting, or presentation. HTML uses tags to mark up content.</dd>
+
+                <dt><strong>HyperText</strong></dt>
+                <dd>Text that contains links to other text or documents. The "hyper" part refers to the non-linear way of accessing information.</dd>
+
+                <dt><strong>Element</strong></dt>
+                <dd>A complete structure consisting of an opening tag, content, and closing tag. For example: <code>&lt;p&gt;Hello&lt;/p&gt;</code></dd>
+
+                <dt><strong>Tag</strong></dt>
+                <dd>Keywords enclosed in angle brackets that define HTML elements. Tags usually come in pairs: opening <code>&lt;tag&gt;</code> and closing <code>&lt;/tag&gt;</code></dd>
+            </dl>
+
+            <div class="example-box">
+                <h3>Example: Element vs Tag</h3>
+                <pre><code>&lt;!-- This entire line is an ELEMENT --&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;!-- These are TAGS --&gt;
+&lt;p&gt;      &lt;-- Opening tag
+&lt;/p&gt;     &lt;-- Closing tag</code></pre>
+                <h4>Result:</h4>
+                <p>This is a paragraph.</p>
+            </div>
+
+            <h2>Document Structure</h2>
+
+            <dl>
+                <dt><strong>DOCTYPE</strong></dt>
+                <dd>Declaration that tells the browser which version of HTML the document uses. HTML5 uses <code>&lt;!DOCTYPE html&gt;</code></dd>
+
+                <dt><strong>Root Element</strong></dt>
+                <dd>The <code>&lt;html&gt;</code> element that contains all other elements in the document.</dd>
+
+                <dt><strong>Head Section</strong></dt>
+                <dd>The <code>&lt;head&gt;</code> element containing metadata about the document (not visible to users).</dd>
+
+                <dt><strong>Body Section</strong></dt>
+                <dd>The <code>&lt;body&gt;</code> element containing all visible content of the webpage.</dd>
+
+                <dt><strong>Metadata</strong></dt>
+                <dd>Information about the document that doesn't appear on the page but helps browsers and search engines understand the content.</dd>
+            </dl>
+
+            <div class="example-box">
+                <h3>Example: Document Structure Terms</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;          &lt;-- DOCTYPE declaration
+&lt;html lang="en"&gt;           &lt;-- Root element with attribute
+&lt;head&gt;                     &lt;-- Head section (metadata)
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;                     &lt;-- Body section (visible content)
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <h2>Attributes and Values</h2>
+
+            <dl>
+                <dt><strong>Attribute</strong></dt>
+                <dd>Additional information provided to an element, written inside the opening tag. Attributes modify or configure elements.</dd>
+
+                <dt><strong>Attribute Value</strong></dt>
+                <dd>The data assigned to an attribute, typically enclosed in quotes.</dd>
+
+                <dt><strong>Global Attributes</strong></dt>
+                <dd>Attributes that can be used on any HTML element (like <code>id</code>, <code>class</code>, <code>style</code>).</dd>
+
+                <dt><strong>Boolean Attributes</strong></dt>
+                <dd>Attributes that don't need values; their presence indicates true (like <code>checked</code>, <code>disabled</code>).</dd>
+            </dl>
+
+            <div class="example-box">
+                <h3>Example: Attributes and Values</h3>
+                <pre><code>&lt;img src="photo.jpg"           &lt;-- src is attribute, "photo.jpg" is value
+     alt="Beautiful sunset"    &lt;-- alt is attribute, "Beautiful sunset" is value
+     width="300"               &lt;-- width is attribute, "300" is value
+     loading="lazy"&gt;           &lt;-- loading is attribute, "lazy" is value
+
+&lt;input type="checkbox" checked&gt;  &lt;-- checked is boolean attribute</code></pre>
+            </div>
+
+            <h2>Content Types</h2>
+
+            <dl>
+                <dt><strong>Block-level Elements</strong></dt>
+                <dd>Elements that take up the full width available and start on a new line (like <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>).</dd>
+
+                <dt><strong>Inline Elements</strong></dt>
+                <dd>Elements that only take up as much width as needed and don't start on a new line (like <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>).</dd>
+
+                <dt><strong>Void Elements</strong></dt>
+                <dd>Elements that don't have closing tags and don't contain content (like <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>).</dd>
+
+                <dt><strong>Semantic Elements</strong></dt>
+                <dd>Elements that have meaning beyond their appearance (like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>).</dd>
+            </dl>
+
+            <div class="example-box">
+                <h3>Example: Element Types</h3>
+                <pre><code>&lt;!-- Block-level elements --&gt;
+&lt;div&gt;This div takes full width&lt;/div&gt;
+&lt;p&gt;This paragraph also takes full width&lt;/p&gt;
+
+&lt;!-- Inline elements --&gt;
+&lt;span&gt;This span&lt;/span&gt; &lt;strong&gt;and this strong&lt;/strong&gt; are inline.
+
+&lt;!-- Void elements --&gt;
+&lt;img src="image.jpg" alt="Image"&gt;
+&lt;br&gt;
+&lt;hr&gt;</code></pre>
+                <h4>Result:</h4>
+                <div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+                    <div>This div takes full width</div>
+                    <p>This paragraph also takes full width</p>
+                    <span>This span</span> <strong>and this strong</strong> are inline.
+                    <br><hr>
+                </div>
+            </div>
+
+            <h2>Web Technologies</h2>
+
+            <dl>
+                <dt><strong>CSS (Cascading Style Sheets)</strong></dt>
+                <dd>Language used to style HTML elements, controlling appearance, layout, and design.</dd>
+
+                <dt><strong>JavaScript</strong></dt>
+                <dd>Programming language that adds interactivity and dynamic behavior to web pages.</dd>
+
+                <dt><strong>DOM (Document Object Model)</strong></dt>
+                <dd>Programming interface that represents the HTML document as a tree structure that can be manipulated by JavaScript.</dd>
+
+                <dt><strong>Browser</strong></dt>
+                <dd>Software application that interprets and displays HTML documents (Chrome, Firefox, Safari, Edge).</dd>
+
+                <dt><strong>Rendering</strong></dt>
+                <dd>The process by which a browser converts HTML code into a visual webpage.</dd>
+            </dl>
+
+            <h2>Accessibility Terms</h2>
+
+            <dl>
+                <dt><strong>Alt Text</strong></dt>
+                <dd>Alternative text for images that screen readers can announce to visually impaired users.</dd>
+
+                <dt><strong>ARIA (Accessible Rich Internet Applications)</strong></dt>
+                <dd>Set of attributes that can be added to HTML elements to improve accessibility for assistive technologies.</dd>
+
+                <dt><strong>Screen Reader</strong></dt>
+                <dd>Assistive technology that reads web page content aloud for users who cannot see the screen.</dd>
+
+                <dt><strong>Semantic HTML</strong></dt>
+                <dd>Using HTML elements according to their intended meaning rather than just their appearance.</dd>
+            </dl>
+
+            <div class="example-box">
+                <h3>Example: Accessibility Features</h3>
+                <pre><code>&lt;img src="chart.png" alt="Sales increased 25% from Q1 to Q2"&gt;
+
+&lt;button aria-label="Close dialog"&gt;×&lt;/button&gt;
+
+&lt;nav aria-label="Main navigation"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+
+            <h2>Development Terms</h2>
+
+            <dl>
+                <dt><strong>Validation</strong></dt>
+                <dd>The process of checking HTML code for errors and compliance with standards.</dd>
+
+                <dt><strong>Nesting</strong></dt>
+                <dd>Placing HTML elements inside other elements in a hierarchical structure.</dd>
+
+                <dt><strong>Indentation</strong></dt>
+                <dd>Adding spaces or tabs to make code structure more readable by showing element hierarchy.</dd>
+
+                <dt><strong>Comments</strong></dt>
+                <dd>Notes in the code that aren't displayed on the webpage, used to explain or organize code.</dd>
+
+                <dt><strong>Responsive Design</strong></dt>
+                <dd>Designing web pages that adapt to different screen sizes and devices.</dd>
+            </dl>
+
+            <div class="example-box">
+                <h3>Example: Good Code Practices</h3>
+                <pre><code>&lt;!-- This is a comment explaining the navigation --&gt;
+&lt;nav&gt;
+    &lt;ul&gt;                    &lt;-- Proper nesting: ul inside nav
+        &lt;li&gt;               &lt;-- Proper indentation shows hierarchy
+            &lt;a href="#"&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="#"&gt;About&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+
+            <h2>Quick Reference</h2>
+            <div class="example-box">
+                <h3>Most Important Terms for Beginners</h3>
+                <ul>
+                    <li><strong>Element:</strong> Complete HTML structure with tags and content</li>
+                    <li><strong>Tag:</strong> Keywords in angle brackets</li>
+                    <li><strong>Attribute:</strong> Additional information for elements</li>
+                    <li><strong>Semantic:</strong> Using elements for their meaning</li>
+                    <li><strong>Validation:</strong> Checking code for errors</li>
+                    <li><strong>Accessibility:</strong> Making content usable by everyone</li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="topic-nav">
+            <a href="html-history.html">← Previous: HTML History</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="basic-structure.html">Next: Basic Structure →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Engr. Nelsonjan E. Perez, PSAU, SPCF, CCA Instructor</p>
+    </footer>
+</body>
+</html>

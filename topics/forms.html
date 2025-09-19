@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms - HTML Learning Topics</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>HTML Forms</h1>
+    </header>
+
+    <main class="topic-page">
+        <nav class="topic-nav">
+            <a href="images-media.html">← Previous: Images & Media</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="tables.html">Next: Tables →</a>
+        </nav>
+
+        <div class="topic-content">
+            <h1>HTML Forms</h1>
+
+            <h2>What are Forms?</h2>
+            <p>HTML forms allow users to enter and submit data to a web server. They're essential for user interaction, login pages, contact forms, and data collection.</p>
+
+            <h2>Basic Form Structure</h2>
+            <p>Every form starts with the <code>&lt;form&gt;</code> element:</p>
+
+            <div class="example-box">
+                <h3>Example: Basic Form</h3>
+                <pre><code>&lt;form action="/submit" method="POST"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                <h4>Result:</h4>
+                <form style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+                    <label for="demo-name">Name:</label><br>
+                    <input type="text" id="demo-name" name="name" required style="margin: 5px 0;"><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <h2>Form Attributes</h2>
+            <ul>
+                <li><code>action</code> - URL where form data is sent</li>
+                <li><code>method</code> - HTTP method (GET or POST)</li>
+                <li><code>enctype</code> - How form data is encoded</li>
+                <li><code>target</code> - Where to display response</li>
+            </ul>
+
+            <h2>Input Types</h2>
+
+            <h3>Text Inputs</h3>
+            <div class="example-box">
+                <h3>Example: Text Input Types</h3>
+                <pre><code>&lt;!-- Basic text --&gt;
+&lt;input type="text" placeholder="Enter text"&gt;
+
+&lt;!-- Email --&gt;
+&lt;input type="email" placeholder="email@example.com"&gt;
+
+&lt;!-- Password --&gt;
+&lt;input type="password" placeholder="Password"&gt;
+
+&lt;!-- Number --&gt;
+&lt;input type="number" min="1" max="100"&gt;
+
+&lt;!-- Date --&gt;
+&lt;input type="date"&gt;
+
+&lt;!-- URL --&gt;
+&lt;input type="url" placeholder="https://example.com"&gt;</code></pre>
+                <h4>Result:</h4>
+                <div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+                    <p><input type="text" placeholder="Enter text" style="margin: 2px;"></p>
+                    <p><input type="email" placeholder="email@example.com" style="margin: 2px;"></p>
+                    <p><input type="password" placeholder="Password" style="margin: 2px;"></p>
+                    <p><input type="number" min="1" max="100" style="margin: 2px;"></p>
+                    <p><input type="date" style="margin: 2px;"></p>
+                    <p><input type="url" placeholder="https://example.com" style="margin: 2px;"></p>
+                </div>
+            </div>
+
+            <h3>Choice Inputs</h3>
+            <div class="example-box">
+                <h3>Example: Radio Buttons and Checkboxes</h3>
+                <pre><code>&lt;!-- Radio buttons (single choice) --&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Choose your favorite color:&lt;/legend&gt;
+    &lt;input type="radio" id="red" name="color" value="red"&gt;
+    &lt;label for="red"&gt;Red&lt;/label&gt;
+
+    &lt;input type="radio" id="blue" name="color" value="blue"&gt;
+    &lt;label for="blue"&gt;Blue&lt;/label&gt;
+
+    &lt;input type="radio" id="green" name="color" value="green"&gt;
+    &lt;label for="green"&gt;Green&lt;/label&gt;
+&lt;/fieldset&gt;
+
+&lt;!-- Checkboxes (multiple choices) --&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Select your hobbies:&lt;/legend&gt;
+    &lt;input type="checkbox" id="reading" name="hobbies" value="reading"&gt;
+    &lt;label for="reading"&gt;Reading&lt;/label&gt;
+
+    &lt;input type="checkbox" id="sports" name="hobbies" value="sports"&gt;
+    &lt;label for="sports"&gt;Sports&lt;/label&gt;
+
+    &lt;input type="checkbox" id="music" name="hobbies" value="music"&gt;
+    &lt;label for="music"&gt;Music&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+                <h4>Result:</h4>
+                <div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+                    <fieldset>
+                        <legend>Choose your favorite color:</legend>
+                        <input type="radio" id="demo-red" name="demo-color" value="red">
+                        <label for="demo-red">Red</label><br>
+                        <input type="radio" id="demo-blue" name="demo-color" value="blue">
+                        <label for="demo-blue">Blue</label><br>
+                        <input type="radio" id="demo-green" name="demo-color" value="green">
+                        <label for="demo-green">Green</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Select your hobbies:</legend>
+                        <input type="checkbox" id="demo-reading" name="demo-hobbies" value="reading">
+                        <label for="demo-reading">Reading</label><br>
+                        <input type="checkbox" id="demo-sports" name="demo-hobbies" value="sports">
+                        <label for="demo-sports">Sports</label><br>
+                        <input type="checkbox" id="demo-music" name="demo-hobbies" value="music">
+                        <label for="demo-music">Music</label>
+                    </fieldset>
+                </div>
+            </div>
+
+            <h2>Other Form Controls</h2>
+
+            <h3>Textarea and Select</h3>
+            <div class="example-box">
+                <h3>Example: Textarea and Dropdown</h3>
+                <pre><code>&lt;!-- Multi-line text --&gt;
+&lt;label for="message"&gt;Message:&lt;/label&gt;
+&lt;textarea id="message" name="message" rows="4" cols="50"&gt;
+    Enter your message here...
+&lt;/textarea&gt;
+
+&lt;!-- Dropdown menu --&gt;
+&lt;label for="country"&gt;Country:&lt;/label&gt;
+&lt;select id="country" name="country"&gt;
+    &lt;option value=""&gt;-- Choose a country --&lt;/option&gt;
+    &lt;option value="us"&gt;United States&lt;/option&gt;
+    &lt;option value="ca"&gt;Canada&lt;/option&gt;
+    &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                <h4>Result:</h4>
+                <div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+                    <label for="demo-message">Message:</label><br>
+                    <textarea id="demo-message" name="message" rows="4" cols="50">Enter your message here...</textarea><br><br>
+                    <label for="demo-country">Country:</label><br>
+                    <select id="demo-country" name="country">
+                        <option value="">-- Choose a country --</option>
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                    </select>
+                </div>
+            </div>
+
+            <h2>Form Validation</h2>
+            <p>HTML5 provides built-in validation attributes:</p>
+
+            <div class="example-box">
+                <h3>Example: Form Validation</h3>
+                <pre><code>&lt;form&gt;
+    &lt;!-- Required field --&gt;
+    &lt;input type="text" required placeholder="Required field"&gt;
+
+    &lt;!-- Minimum and maximum length --&gt;
+    &lt;input type="text" minlength="3" maxlength="10" placeholder="3-10 characters"&gt;
+
+    &lt;!-- Pattern matching --&gt;
+    &lt;input type="text" pattern="[A-Za-z]{3}" placeholder="3 letters only"&gt;
+
+    &lt;!-- Number range --&gt;
+    &lt;input type="number" min="18" max="65" placeholder="Age (18-65)"&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                <h4>Result:</h4>
+                <form style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+                    <p><input type="text" required placeholder="Required field" style="margin: 2px;"></p>
+                    <p><input type="text" minlength="3" maxlength="10" placeholder="3-10 characters" style="margin: 2px;"></p>
+                    <p><input type="text" pattern="[A-Za-z]{3}" placeholder="3 letters only" style="margin: 2px;"></p>
+                    <p><input type="number" min="18" max="65" placeholder="Age (18-65)" style="margin: 2px;"></p>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <h2>Labels and Accessibility</h2>
+            <p>Always use labels to make forms accessible:</p>
+
+            <div class="example-box">
+                <h3>Example: Proper Labels</h3>
+                <pre><code>&lt;!-- Method 1: for attribute --&gt;
+&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username"&gt;
+
+&lt;!-- Method 2: wrapping --&gt;
+&lt;label&gt;
+    Email:
+    &lt;input type="email" name="email"&gt;
+&lt;/label&gt;</code></pre>
+            </div>
+
+            <h2>Complete Form Example</h2>
+            <div class="example-box">
+                <h3>Example: Contact Form</h3>
+                <pre><code>&lt;form action="/contact" method="POST"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Contact Information&lt;/legend&gt;
+
+        &lt;label for="fullname"&gt;Full Name:&lt;/label&gt;
+        &lt;input type="text" id="fullname" name="fullname" required&gt;
+
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+
+        &lt;label for="phone"&gt;Phone:&lt;/label&gt;
+        &lt;input type="tel" id="phone" name="phone"&gt;
+
+        &lt;label for="subject"&gt;Subject:&lt;/label&gt;
+        &lt;select id="subject" name="subject" required&gt;
+            &lt;option value=""&gt;-- Select a subject --&lt;/option&gt;
+            &lt;option value="general"&gt;General Inquiry&lt;/option&gt;
+            &lt;option value="support"&gt;Technical Support&lt;/option&gt;
+            &lt;option value="billing"&gt;Billing Question&lt;/option&gt;
+        &lt;/select&gt;
+
+        &lt;label for="message"&gt;Message:&lt;/label&gt;
+        &lt;textarea id="message" name="message" rows="5" required&gt;&lt;/textarea&gt;
+
+        &lt;input type="checkbox" id="newsletter" name="newsletter" value="yes"&gt;
+        &lt;label for="newsletter"&gt;Subscribe to newsletter&lt;/label&gt;
+
+        &lt;button type="submit"&gt;Send Message&lt;/button&gt;
+        &lt;button type="reset"&gt;Clear Form&lt;/button&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+
+            <h2>Form Best Practices</h2>
+            <ul>
+                <li>Always use labels for accessibility</li>
+                <li>Group related fields with <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code></li>
+                <li>Use appropriate input types for better user experience</li>
+                <li>Provide clear placeholder text and instructions</li>
+                <li>Use validation attributes to help users enter correct data</li>
+                <li>Make required fields clearly marked</li>
+                <li>Test forms with keyboard navigation</li>
+                <li>Provide helpful error messages</li>
+            </ul>
+        </div>
+
+        <nav class="topic-nav">
+            <a href="images-media.html">← Previous: Images & Media</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="tables.html">Next: Tables →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Engr. Nelsonjan E. Perez, PSAU, SPCF, CCA Instructor</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables - HTML Learning Topics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Additional styles for table examples */
+        .demo-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+        .demo-table th, .demo-table td {
+            border: 1px solid #0C2292;
+            padding: 8px;
+            text-align: left;
+        }
+        .demo-table th {
+            background-color: #0C2292;
+            color: white;
+            font-weight: bold;
+        }
+        .demo-table tr:nth-child(even) {
+            background-color: rgba(232, 187, 23, 0.1);
+        }
+        .demo-table tr:hover {
+            background-color: rgba(232, 187, 23, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Tables</h1>
+    </header>
+
+    <main class="topic-page">
+        <nav class="topic-nav">
+            <a href="forms.html">← Previous: Forms</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="semantic-html.html">Next: Semantic HTML →</a>
+        </nav>
+
+        <div class="topic-content">
+            <h1>HTML Tables</h1>
+
+            <h2>What are Tables?</h2>
+            <p>HTML tables are used to display data in rows and columns. They're perfect for presenting structured information like spreadsheets, price lists, schedules, or comparison charts.</p>
+
+            <h2>Basic Table Structure</h2>
+            <p>Every table is built with these essential elements:</p>
+            <ul>
+                <li><code>&lt;table&gt;</code> - Container for the entire table</li>
+                <li><code>&lt;tr&gt;</code> - Table row</li>
+                <li><code>&lt;td&gt;</code> - Table data cell</li>
+                <li><code>&lt;th&gt;</code> - Table header cell</li>
+            </ul>
+
+            <div class="example-box">
+                <h3>Example: Simple Table</h3>
+                <pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+        &lt;th&gt;City&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+        &lt;td&gt;New York&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Jane&lt;/td&gt;
+        &lt;td&gt;30&lt;/td&gt;
+        &lt;td&gt;London&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                <h4>Result:</h4>
+                <table class="demo-table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>25</td>
+                        <td>New York</td>
+                    </tr>
+                    <tr>
+                        <td>Jane</td>
+                        <td>30</td>
+                        <td>London</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>Table Sections</h2>
+            <p>For better structure and accessibility, organize tables into sections:</p>
+            <ul>
+                <li><code>&lt;thead&gt;</code> - Table header section</li>
+                <li><code>&lt;tbody&gt;</code> - Table body section</li>
+                <li><code>&lt;tfoot&gt;</code> - Table footer section</li>
+            </ul>
+
+            <div class="example-box">
+                <h3>Example: Table with Sections</h3>
+                <pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Product&lt;/th&gt;
+            &lt;th&gt;Price&lt;/th&gt;
+            &lt;th&gt;Quantity&lt;/th&gt;
+            &lt;th&gt;Total&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Laptop&lt;/td&gt;
+            &lt;td&gt;$999&lt;/td&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;$1,998&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Mouse&lt;/td&gt;
+            &lt;td&gt;$25&lt;/td&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;$75&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="3"&gt;&lt;strong&gt;Grand Total&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;strong&gt;$2,073&lt;/strong&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                <h4>Result:</h4>
+                <table class="demo-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Laptop</td>
+                            <td>$999</td>
+                            <td>2</td>
+                            <td>$1,998</td>
+                        </tr>
+                        <tr>
+                            <td>Mouse</td>
+                            <td>$25</td>
+                            <td>3</td>
+                            <td>$75</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr style="background-color: rgba(12, 34, 146, 0.1);">
+                            <td colspan="3"><strong>Grand Total</strong></td>
+                            <td><strong>$2,073</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <h2>Table Caption</h2>
+            <p>Use <code>&lt;caption&gt;</code> to provide a title or description for your table:</p>
+
+            <div class="example-box">
+                <h3>Example: Table with Caption</h3>
+                <pre><code>&lt;table&gt;
+    &lt;caption&gt;Monthly Sales Report - Q1 2024&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Month&lt;/th&gt;
+            &lt;th&gt;Sales&lt;/th&gt;
+            &lt;th&gt;Growth&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;January&lt;/td&gt;
+            &lt;td&gt;$45,000&lt;/td&gt;
+            &lt;td&gt;+5%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;February&lt;/td&gt;
+            &lt;td&gt;$52,000&lt;/td&gt;
+            &lt;td&gt;+15%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;March&lt;/td&gt;
+            &lt;td&gt;$48,000&lt;/td&gt;
+            &lt;td&gt;-8%&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                <h4>Result:</h4>
+                <table class="demo-table">
+                    <caption style="color: #0C2292; font-weight: bold; margin-bottom: 10px;">Monthly Sales Report - Q1 2024</caption>
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Sales</th>
+                            <th>Growth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>January</td>
+                            <td>$45,000</td>
+                            <td>+5%</td>
+                        </tr>
+                        <tr>
+                            <td>February</td>
+                            <td>$52,000</td>
+                            <td>+15%</td>
+                        </tr>
+                        <tr>
+                            <td>March</td>
+                            <td>$48,000</td>
+                            <td>-8%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Spanning Cells</h2>
+            <p>Make cells span multiple columns or rows using <code>colspan</code> and <code>rowspan</code>:</p>
+
+            <h3>Column Spanning (colspan)</h3>
+            <div class="example-box">
+                <h3>Example: Colspan</h3>
+                <pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th colspan="3"&gt;Student Grades&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Math&lt;/th&gt;
+        &lt;th&gt;Science&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Alice&lt;/td&gt;
+        &lt;td&gt;95&lt;/td&gt;
+        &lt;td&gt;88&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Bob&lt;/td&gt;
+        &lt;td&gt;87&lt;/td&gt;
+        &lt;td&gt;92&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                <h4>Result:</h4>
+                <table class="demo-table">
+                    <tr>
+                        <th colspan="3" style="text-align: center; background-color: #E8BB17; color: #0C2292;">Student Grades</th>
+                    </tr>
+                    <tr>
+                        <th>Name</th>
+                        <th>Math</th>
+                        <th>Science</th>
+                    </tr>
+                    <tr>
+                        <td>Alice</td>
+                        <td>95</td>
+                        <td>88</td>
+                    </tr>
+                    <tr>
+                        <td>Bob</td>
+                        <td>87</td>
+                        <td>92</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Row Spanning (rowspan)</h3>
+            <div class="example-box">
+                <h3>Example: Rowspan</h3>
+                <pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Department&lt;/th&gt;
+        &lt;th&gt;Employee&lt;/th&gt;
+        &lt;th&gt;Position&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;IT&lt;/td&gt;
+        &lt;td&gt;John Smith&lt;/td&gt;
+        &lt;td&gt;Developer&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Sarah Jones&lt;/td&gt;
+        &lt;td&gt;Designer&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;Marketing&lt;/td&gt;
+        &lt;td&gt;Mike Wilson&lt;/td&gt;
+        &lt;td&gt;Manager&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Lisa Brown&lt;/td&gt;
+        &lt;td&gt;Coordinator&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                <h4>Result:</h4>
+                <table class="demo-table">
+                    <tr>
+                        <th>Department</th>
+                        <th>Employee</th>
+                        <th>Position</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="vertical-align: middle; background-color: rgba(232, 187, 23, 0.2); font-weight: bold;">IT</td>
+                        <td>John Smith</td>
+                        <td>Developer</td>
+                    </tr>
+                    <tr>
+                        <td>Sarah Jones</td>
+                        <td>Designer</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="vertical-align: middle; background-color: rgba(232, 187, 23, 0.2); font-weight: bold;">Marketing</td>
+                        <td>Mike Wilson</td>
+                        <td>Manager</td>
+                    </tr>
+                    <tr>
+                        <td>Lisa Brown</td>
+                        <td>Coordinator</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>Table Accessibility</h2>
+            <p>Make tables accessible to screen readers and assistive technologies:</p>
+
+            <div class="example-box">
+                <h3>Example: Accessible Table</h3>
+                <pre><code>&lt;table&gt;
+    &lt;caption&gt;Course Schedule for Computer Science Students&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Time&lt;/th&gt;
+            &lt;th scope="col"&gt;Monday&lt;/th&gt;
+            &lt;th scope="col"&gt;Tuesday&lt;/th&gt;
+            &lt;th scope="col"&gt;Wednesday&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;9:00 AM&lt;/th&gt;
+            &lt;td&gt;Programming&lt;/td&gt;
+            &lt;td&gt;Database&lt;/td&gt;
+            &lt;td&gt;Web Design&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;11:00 AM&lt;/th&gt;
+            &lt;td&gt;Math&lt;/td&gt;
+            &lt;td&gt;Algorithms&lt;/td&gt;
+            &lt;td&gt;Networks&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                <h4>Result:</h4>
+                <table class="demo-table">
+                    <caption style="color: #0C2292; font-weight: bold; margin-bottom: 10px;">Course Schedule for Computer Science Students</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Monday</th>
+                            <th scope="col">Tuesday</th>
+                            <th scope="col">Wednesday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" style="background-color: rgba(12, 34, 146, 0.8); color: white;">9:00 AM</th>
+                            <td>Programming</td>
+                            <td>Database</td>
+                            <td>Web Design</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="background-color: rgba(12, 34, 146, 0.8); color: white;">11:00 AM</th>
+                            <td>Math</td>
+                            <td>Algorithms</td>
+                            <td>Networks</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Accessibility Attributes</h2>
+            <ul>
+                <li><code>scope="col"</code> - Indicates header applies to column</li>
+                <li><code>scope="row"</code> - Indicates header applies to row</li>
+                <li><code>headers</code> - Links cells to their headers (for complex tables)</li>
+                <li><code>caption</code> - Provides table description</li>
+                <li><code>summary</code> - Describes table structure (deprecated, use caption instead)</li>
+            </ul>
+
+            <h2>Complex Table Example</h2>
+            <div class="example-box">
+                <h3>Example: Product Comparison Table</h3>
+                <pre><code>&lt;table&gt;
+    &lt;caption&gt;Smartphone Comparison Chart&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Feature&lt;/th&gt;
+            &lt;th scope="col"&gt;Phone A&lt;/th&gt;
+            &lt;th scope="col"&gt;Phone B&lt;/th&gt;
+            &lt;th scope="col"&gt;Phone C&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Screen Size&lt;/th&gt;
+            &lt;td&gt;6.1"&lt;/td&gt;
+            &lt;td&gt;6.7"&lt;/td&gt;
+            &lt;td&gt;6.4"&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Storage&lt;/th&gt;
+            &lt;td&gt;128GB&lt;/td&gt;
+            &lt;td&gt;256GB&lt;/td&gt;
+            &lt;td&gt;128GB&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Camera&lt;/th&gt;
+            &lt;td&gt;12MP&lt;/td&gt;
+            &lt;td&gt;48MP&lt;/td&gt;
+            &lt;td&gt;24MP&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Price&lt;/th&gt;
+            &lt;td&gt;&lt;strong&gt;$699&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;strong&gt;$999&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;strong&gt;$799&lt;/strong&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                <h4>Result:</h4>
+                <table class="demo-table">
+                    <caption style="color: #0C2292; font-weight: bold; margin-bottom: 10px;">Smartphone Comparison Chart</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Feature</th>
+                            <th scope="col">Phone A</th>
+                            <th scope="col">Phone B</th>
+                            <th scope="col">Phone C</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" style="background-color: rgba(12, 34, 146, 0.8); color: white;">Screen Size</th>
+                            <td>6.1"</td>
+                            <td>6.7"</td>
+                            <td>6.4"</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="background-color: rgba(12, 34, 146, 0.8); color: white;">Storage</th>
+                            <td>128GB</td>
+                            <td>256GB</td>
+                            <td>128GB</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="background-color: rgba(12, 34, 146, 0.8); color: white;">Camera</th>
+                            <td>12MP</td>
+                            <td>48MP</td>
+                            <td>24MP</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="background-color: rgba(12, 34, 146, 0.8); color: white;">Price</th>
+                            <td><strong>$699</strong></td>
+                            <td><strong>$999</strong></td>
+                            <td><strong>$799</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Table Best Practices</h2>
+            <ul>
+                <li><strong>Use tables for tabular data only</strong> - Don't use tables for layout</li>
+                <li><strong>Always include headers</strong> - Use <code>&lt;th&gt;</code> elements with appropriate <code>scope</code> attributes</li>
+                <li><strong>Add captions</strong> - Provide context with <code>&lt;caption&gt;</code> elements</li>
+                <li><strong>Structure properly</strong> - Use <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code> when appropriate</li>
+                <li><strong>Keep it simple</strong> - Avoid overly complex table structures</li>
+                <li><strong>Make it responsive</strong> - Consider mobile users with CSS</li>
+                <li><strong>Test accessibility</strong> - Ensure screen readers can navigate your tables</li>
+                <li><strong>Style consistently</strong> - Use CSS for visual formatting, not HTML attributes</li>
+            </ul>
+
+            <h2>When NOT to Use Tables</h2>
+            <div class="example-box">
+                <h3>❌ Don't Use Tables For:</h3>
+                <ul>
+                    <li>Page layout and positioning</li>
+                    <li>Creating columns of text</li>
+                    <li>Aligning form elements</li>
+                    <li>Navigation menus</li>
+                    <li>Any non-tabular content</li>
+                </ul>
+
+                <h3>✅ Do Use Tables For:</h3>
+                <ul>
+                    <li>Displaying spreadsheet-like data</li>
+                    <li>Comparison charts</li>
+                    <li>Financial reports</li>
+                    <li>Schedules and timetables</li>
+                    <li>Any data with rows and columns relationship</li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="topic-nav">
+            <a href="forms.html">← Previous: Forms</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="semantic-html.html">Next: Semantic HTML →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Engr. Nelsonjan E. Perez, PSAU, SPCF, CCA Instructor</p>
+    </footer>
+</body>
+</html>

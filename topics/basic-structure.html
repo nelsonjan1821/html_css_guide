@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Structure - HTML Learning Topics</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Basic HTML Structure</h1>
+    </header>
+
+    <main class="topic-page">
+        <nav class="topic-nav">
+            <a href="key-terms.html">← Previous: Key Terms</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="text-content.html">Next: Text & Content →</a>
+        </nav>
+
+        <div class="topic-content">
+            <h1>Basic HTML Structure</h1>
+
+            <h2>What is HTML?</h2>
+            <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure of a web page using elements and tags.</p>
+
+            <h2>Basic Document Structure</h2>
+            <p>Every HTML document has the same basic structure:</p>
+
+            <div class="example-box">
+                <h3>Example: Basic HTML Document</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <h2>Key Components</h2>
+            <ul>
+                <li><code>&lt;!DOCTYPE html&gt;</code> - Declares the document type as HTML5</li>
+                <li><code>&lt;html&gt;</code> - Root element that contains all content</li>
+                <li><code>&lt;head&gt;</code> - Contains metadata about the document</li>
+                <li><code>&lt;body&gt;</code> - Contains the visible content of the page</li>
+            </ul>
+
+            <h2>HTML Elements and Tags</h2>
+            <p>HTML elements are the building blocks of HTML pages:</p>
+            <ul>
+                <li><strong>Opening tag:</strong> <code>&lt;tagname&gt;</code></li>
+                <li><strong>Content:</strong> The text or other elements inside</li>
+                <li><strong>Closing tag:</strong> <code>&lt;/tagname&gt;</code></li>
+            </ul>
+
+            <h2>HTML Attributes</h2>
+            <p>Attributes provide additional information about elements:</p>
+            <div class="example-box">
+                <h3>Example: Attributes</h3>
+                <pre><code>&lt;img src="image.jpg" alt="Description" width="300"&gt;
+&lt;a href="https://example.com" target="_blank"&gt;Link&lt;/a&gt;
+&lt;p class="highlight" id="intro"&gt;Text&lt;/p&gt;</code></pre>
+            </div>
+
+            <h2>Self-Closing Tags</h2>
+            <p>Some elements don't need closing tags:</p>
+            <ul>
+                <li><code>&lt;img&gt;</code> - Images</li>
+                <li><code>&lt;br&gt;</code> - Line breaks</li>
+                <li><code>&lt;hr&gt;</code> - Horizontal rules</li>
+                <li><code>&lt;input&gt;</code> - Form inputs</li>
+            </ul>
+
+            <h2>Comments</h2>
+            <p>Use comments to add notes in your code:</p>
+            <div class="example-box">
+                <h3>Example: HTML Comments</h3>
+                <pre><code>&lt;!-- This is a comment --&gt;
+&lt;p&gt;This paragraph will be visible&lt;/p&gt;
+&lt;!--
+    Multi-line
+    comment
+--&gt;</code></pre>
+            </div>
+        </div>
+
+        <nav class="topic-nav">
+            <a href="key-terms.html">← Previous: Key Terms</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="text-content.html">Next: Text & Content →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Engr. Nelsonjan E. Perez, PSAU, SPCF, CCA Instructor</p>
+    </footer>
+</body>
+</html>

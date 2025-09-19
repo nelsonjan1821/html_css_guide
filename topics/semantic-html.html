@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML - HTML & CSS Learning Topics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .semantic-demo {
+            border: 2px solid #E8BB17;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .semantic-demo header {
+            background: #0C2292 !important;
+            color: #ffffff !important;
+            padding: 15px;
+            text-align: center;
+        }
+        .semantic-demo header h1 {
+            color: #ffffff !important;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .semantic-demo nav {
+            background: #E8BB17;
+            padding: 10px;
+        }
+        .semantic-demo nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        .semantic-demo nav a {
+            color: #0C2292;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .semantic-demo main {
+            padding: 20px;
+            background: #ffffff;
+        }
+        .semantic-demo aside {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #E8BB17;
+        }
+        .semantic-demo footer {
+            background: #0C2292;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .semantic-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .comparison-box {
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        .comparison-box.non-semantic {
+            border-color: #dc3545;
+            background: #fff5f5;
+        }
+        .comparison-box.semantic {
+            border-color: #28a745;
+            background: #f8fff8;
+        }
+        .element-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .element-card {
+            border: 2px solid #E8BB17;
+            border-radius: 8px;
+            padding: 15px;
+            background: #ffffff;
+        }
+        .element-tag {
+            background: #0C2292;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .accessibility-demo {
+            background: #f0f8ff;
+            border: 2px solid #0C2292;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .seo-benefits {
+            background: #fff8e1;
+            border: 2px solid #E8BB17;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .structure-diagram {
+            background: #f8f9fa;
+            border: 2px solid #0C2292;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .structure-diagram .html-element {
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 4px solid #E8BB17;
+            background: white;
+            border-radius: 4px;
+        }
+        .structure-diagram .nested {
+            margin-left: 20px;
+        }
+        @media (max-width: 768px) {
+            .semantic-comparison {
+                grid-template-columns: 1fr;
+            }
+            .element-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Semantic HTML</h1>
+    </header>
+
+    <main class="topic-page">
+        <nav class="topic-nav">
+            <a href="../index.html">← Back to Main</a>
+            <a href="meta-information.html">Next: Meta Information →</a>
+        </nav>
+
+        <div class="topic-content">
+            <h1>Semantic HTML</h1>
+
+            <h2>What is Semantic HTML?</h2>
+            <p><strong>Semantic HTML</strong> uses HTML elements that clearly describe their meaning and purpose to both browsers and developers. Instead of using generic <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> elements everywhere, semantic HTML uses specific elements that convey the structure and meaning of content.</p>
+
+            <div class="example-box">
+                <h3>Semantic vs Non-Semantic Elements:</h3>
+                <div class="semantic-comparison">
+                    <div class="comparison-box non-semantic">
+                        <h4>❌ Non-Semantic (Bad)</h4>
+                        <pre><code>&lt;div class="header"&gt;
+    &lt;div class="nav"&gt;Navigation&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="content"&gt;
+    &lt;div class="article"&gt;Article content&lt;/div&gt;
+    &lt;div class="sidebar"&gt;Sidebar&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="footer"&gt;Footer&lt;/div&gt;</code></pre>
+                    </div>
+                    <div class="comparison-box semantic">
+                        <h4>✅ Semantic (Good)</h4>
+                        <pre><code>&lt;header&gt;
+    &lt;nav&gt;Navigation&lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;article&gt;Article content&lt;/article&gt;
+    &lt;aside&gt;Sidebar&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;Footer&lt;/footer&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Key Semantic HTML Elements</h2>
+            <div class="element-showcase">
+                <div class="element-card">
+                    <div class="element-tag">&lt;header&gt;</div>
+                    <h4>Header Element</h4>
+                    <p><strong>Purpose:</strong> Contains introductory content, logos, navigation, or headings for a page or section.</p>
+                    <p><strong>Use for:</strong> Site headers, article headers, section introductions</p>
+                    <pre><code>&lt;header&gt;
+    &lt;h1&gt;My Website&lt;/h1&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+                </div>
+
+                <div class="element-card">
+                    <div class="element-tag">&lt;nav&gt;</div>
+                    <h4>Navigation Element</h4>
+                    <p><strong>Purpose:</strong> Contains navigation links for the website or page sections.</p>
+                    <p><strong>Use for:</strong> Main menus, breadcrumbs, pagination, table of contents</p>
+                    <pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                </div>
+
+                <div class="element-card">
+                    <div class="element-tag">&lt;main&gt;</div>
+                    <h4>Main Content Element</h4>
+                    <p><strong>Purpose:</strong> Contains the primary content of the page. Should be unique per page.</p>
+                    <p><strong>Use for:</strong> Main content area, excluding headers, footers, and sidebars</p>
+                    <pre><code>&lt;main&gt;
+    &lt;h1&gt;Page Title&lt;/h1&gt;
+    &lt;p&gt;Main content goes here...&lt;/p&gt;
+&lt;/main&gt;</code></pre>
+                </div>
+
+                <div class="element-card">
+                    <div class="element-tag">&lt;article&gt;</div>
+                    <h4>Article Element</h4>
+                    <p><strong>Purpose:</strong> Contains standalone content that could be distributed independently.</p>
+                    <p><strong>Use for:</strong> Blog posts, news articles, forum posts, product cards</p>
+                    <pre><code>&lt;article&gt;
+    &lt;h2&gt;Article Title&lt;/h2&gt;
+    &lt;p&gt;Article content...&lt;/p&gt;
+    &lt;footer&gt;By Author&lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+                </div>
+
+                <div class="element-card">
+                    <div class="element-tag">&lt;section&gt;</div>
+                    <h4>Section Element</h4>
+                    <p><strong>Purpose:</strong> Groups related content together, typically with a heading.</p>
+                    <p><strong>Use for:</strong> Chapters, tabs, themed groups of content</p>
+                    <pre><code>&lt;section&gt;
+    &lt;h2&gt;About Us&lt;/h2&gt;
+    &lt;p&gt;Company information...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+                </div>
+
+                <div class="element-card">
+                    <div class="element-tag">&lt;aside&gt;</div>
+                    <h4>Aside Element</h4>
+                    <p><strong>Purpose:</strong> Contains content related to but separate from the main content.</p>
+                    <p><strong>Use for:</strong> Sidebars, pull quotes, related links, advertisements</p>
+                    <pre><code>&lt;aside&gt;
+    &lt;h3&gt;Related Articles&lt;/h3&gt;
+    &lt;ul&gt;...&lt;/ul&gt;
+&lt;/aside&gt;</code></pre>
+                </div>
+
+                <div class="element-card">
+                    <div class="element-tag">&lt;footer&gt;</div>
+                    <h4>Footer Element</h4>
+                    <p><strong>Purpose:</strong> Contains footer information for a page or section.</p>
+                    <p><strong>Use for:</strong> Copyright, contact info, links, author information</p>
+                    <pre><code>&lt;footer&gt;
+    &lt;p&gt;&copy; 2024 Company Name&lt;/p&gt;
+    &lt;address&gt;Contact info&lt;/address&gt;
+&lt;/footer&gt;</code></pre>
+                </div>
+            </div>
+
+            <h2>Complete Semantic HTML Structure</h2>
+            <div class="structure-diagram">
+                <h3>Typical Page Structure:</h3>
+                <div class="html-element">
+                    <strong>&lt;html&gt;</strong>
+                    <div class="nested">
+                        <div class="html-element">
+                            <strong>&lt;head&gt;</strong> - Document metadata
+                        </div>
+                        <div class="html-element">
+                            <strong>&lt;body&gt;</strong>
+                            <div class="nested">
+                                <div class="html-element">
+                                    <strong>&lt;header&gt;</strong> - Site header with logo and main navigation
+                                </div>
+                                <div class="html-element">
+                                    <strong>&lt;main&gt;</strong> - Primary page content
+                                    <div class="nested">
+                                        <div class="html-element">
+                                            <strong>&lt;section&gt;</strong> - Grouped content sections
+                                        </div>
+                                        <div class="html-element">
+                                            <strong>&lt;article&gt;</strong> - Standalone content pieces
+                                        </div>
+                                        <div class="html-element">
+                                            <strong>&lt;aside&gt;</strong> - Sidebar or related content
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="html-element">
+                                    <strong>&lt;footer&gt;</strong> - Site footer with links and copyright
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Live Example: Semantic Website Layout</h2>
+            <div class="semantic-demo">
+                <header>
+                    <h1>TechNews Today</h1>
+                </header>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <main>
+                    <article>
+                        <h2>Latest Tech Breakthrough</h2>
+                        <p>Scientists have developed a new quantum computer that can solve complex problems in seconds...</p>
+                        <footer>
+                            <p>By John Doe | Published: January 15, 2024</p>
+                        </footer>
+                    </article>
+
+                    <section>
+                        <h2>Today's Headlines</h2>
+                        <ul>
+                            <li>AI reaches new milestone in language processing</li>
+                            <li>Electric vehicle sales surge globally</li>
+                            <li>New smartphone features revolutionize photography</li>
+                        </ul>
+                    </section>
+
+                    <aside>
+                        <h3>Trending Topics</h3>
+                        <ul>
+                            <li>#QuantumComputing</li>
+                            <li>#ArtificialIntelligence</li>
+                            <li>#SustainableTech</li>
+                        </ul>
+                    </aside>
+                </main>
+                <footer>
+                    <p>&copy; 2024 TechNews Today. All rights reserved.</p>
+                </footer>
+            </div>
+
+            <h2>Benefits of Semantic HTML</h2>
+
+            <h3>1. Accessibility Benefits</h3>
+            <div class="accessibility-demo">
+                <h4>🔍 Screen Reader Support</h4>
+                <p>Semantic elements help screen readers understand page structure and allow users to:</p>
+                <ul>
+                    <li><strong>Navigate by landmarks:</strong> Jump directly to main content, navigation, or footer</li>
+                    <li><strong>Understand content hierarchy:</strong> Know what's a heading vs. body text</li>
+                    <li><strong>Skip repetitive content:</strong> Bypass navigation to reach main content</li>
+                    <li><strong>Get context:</strong> Understand the purpose of different page sections</li>
+                </ul>
+
+                <h4>Example Screen Reader Commands:</h4>
+                <ul>
+                    <li><code>H</code> - Navigate to next heading</li>
+                    <li><code>M</code> - Navigate to main content</li>
+                    <li><code>N</code> - Navigate to navigation</li>
+                    <li><code>R</code> - Navigate to regions/landmarks</li>
+                </ul>
+            </div>
+
+            <h3>2. SEO Benefits</h3>
+            <div class="seo-benefits">
+                <h4>🚀 Search Engine Optimization</h4>
+                <p>Search engines better understand your content structure:</p>
+                <ul>
+                    <li><strong>Content hierarchy:</strong> &lt;main&gt; tells search engines what's most important</li>
+                    <li><strong>Navigation understanding:</strong> &lt;nav&gt; elements help identify site structure</li>
+                    <li><strong>Article identification:</strong> &lt;article&gt; elements mark standalone content</li>
+                    <li><strong>Related content:</strong> &lt;aside&gt; elements identify supplementary information</li>
+                    <li><strong>Better indexing:</strong> Clear structure leads to better search rankings</li>
+                </ul>
+            </div>
+
+            <h3>3. Developer Benefits</h3>
+            <div class="example-box">
+                <h4>👨‍💻 Code Quality & Maintenance</h4>
+                <ul>
+                    <li><strong>Readable code:</strong> Semantic elements are self-documenting</li>
+                    <li><strong>Easier debugging:</strong> Clear structure makes issues easier to find</li>
+                    <li><strong>Team collaboration:</strong> New developers understand code faster</li>
+                    <li><strong>Future-proof:</strong> Semantic meaning remains consistent over time</li>
+                    <li><strong>CSS targeting:</strong> Style elements by their semantic meaning</li>
+                </ul>
+            </div>
+
+            <h2>Common Semantic HTML Mistakes</h2>
+            <div class="example-box">
+                <h3>❌ What NOT to Do:</h3>
+                <ul>
+                    <li><strong>Multiple &lt;main&gt; elements:</strong> Only one &lt;main&gt; per page</li>
+                    <li><strong>Using &lt;section&gt; without headings:</strong> Sections should have descriptive headings</li>
+                    <li><strong>Overusing &lt;article&gt;:</strong> Not all content is standalone</li>
+                    <li><strong>Wrong nesting:</strong> Don't put &lt;header&gt; inside &lt;address&gt;</li>
+                    <li><strong>Semantic elements for styling:</strong> Use CSS for visual styling, not semantic meaning</li>
+                </ul>
+
+                <h3>✅ Best Practices:</h3>
+                <ul>
+                    <li><strong>Choose elements by meaning, not appearance</strong></li>
+                    <li><strong>Use headings (h1-h6) to create content hierarchy</strong></li>
+                    <li><strong>Include alternative text for images</strong></li>
+                    <li><strong>Test with screen readers or accessibility tools</strong></li>
+                    <li><strong>Validate your HTML for proper structure</strong></li>
+                </ul>
+            </div>
+
+            <h2>Advanced Semantic Elements</h2>
+            <div class="example-box">
+                <h3>Additional Semantic Elements:</h3>
+                <div class="element-showcase">
+                    <div class="element-card">
+                        <div class="element-tag">&lt;figure&gt;</div>
+                        <h5>Figure & Figcaption</h5>
+                        <pre><code>&lt;figure&gt;
+    &lt;img src="chart.png" alt="Sales data"&gt;
+    &lt;figcaption&gt;Q3 Sales Performance&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-tag">&lt;time&gt;</div>
+                        <h5>Time Element</h5>
+                        <pre><code>&lt;time datetime="2024-01-15"&gt;
+    January 15, 2024
+&lt;/time&gt;</code></pre>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-tag">&lt;address&gt;</div>
+                        <h5>Address Element</h5>
+                        <pre><code>&lt;address&gt;
+    &lt;a href="mailto:john@example.com"&gt;
+        john@example.com
+    &lt;/a&gt;
+&lt;/address&gt;</code></pre>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-tag">&lt;mark&gt;</div>
+                        <h5>Mark Element</h5>
+                        <pre><code>&lt;p&gt;Search results for
+&lt;mark&gt;semantic HTML&lt;/mark&gt;&lt;/p&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Testing Semantic HTML</h2>
+            <div class="example-box">
+                <h3>Tools for Testing:</h3>
+                <ul>
+                    <li><strong>Browser DevTools:</strong> Inspect accessibility tree</li>
+                    <li><strong>WAVE Browser Extension:</strong> Web accessibility evaluation</li>
+                    <li><strong>axe DevTools:</strong> Automated accessibility testing</li>
+                    <li><strong>HTML5 Outliner:</strong> Check document structure</li>
+                    <li><strong>Screen Reader Testing:</strong> NVDA (free), JAWS, VoiceOver</li>
+                </ul>
+
+                <h3>Quick Accessibility Test:</h3>
+                <ol>
+                    <li>Navigate your page using only the Tab key</li>
+                    <li>Check if all interactive elements are reachable</li>
+                    <li>Verify heading structure makes sense (h1 → h2 → h3)</li>
+                    <li>Test with browser zoom at 200%</li>
+                    <li>Use a screen reader to navigate landmarks</li>
+                </ol>
+            </div>
+
+            <h2>Real-World Example</h2>
+            <div class="example-box">
+                <h3>Blog Post Structure:</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Understanding CSS Grid&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;My Tech Blog&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h1&gt;Understanding CSS Grid&lt;/h1&gt;
+                &lt;p&gt;Published on &lt;time datetime="2024-01-15"&gt;January 15, 2024&lt;/time&gt;&lt;/p&gt;
+            &lt;/header&gt;
+
+            &lt;section&gt;
+                &lt;h2&gt;Introduction to Grid&lt;/h2&gt;
+                &lt;p&gt;CSS Grid is a powerful layout system...&lt;/p&gt;
+            &lt;/section&gt;
+
+            &lt;section&gt;
+                &lt;h2&gt;Basic Grid Properties&lt;/h2&gt;
+                &lt;p&gt;Let's explore the fundamental properties...&lt;/p&gt;
+            &lt;/section&gt;
+
+            &lt;footer&gt;
+                &lt;address&gt;
+                    Written by &lt;a href="mailto:author@blog.com"&gt;Jane Doe&lt;/a&gt;
+                &lt;/address&gt;
+            &lt;/footer&gt;
+        &lt;/article&gt;
+
+        &lt;aside&gt;
+            &lt;h2&gt;Related Posts&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="/flexbox-guide"&gt;Complete Flexbox Guide&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/responsive-design"&gt;Responsive Design Tips&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 My Tech Blog. All rights reserved.&lt;/p&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="/privacy"&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/terms"&gt;Terms&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <h2>Summary</h2>
+            <div class="example-box">
+                <h3>Key Takeaways:</h3>
+                <ul>
+                    <li><strong>Semantic HTML improves accessibility</strong> by providing clear structure for assistive technologies</li>
+                    <li><strong>Search engines better understand</strong> semantically structured content</li>
+                    <li><strong>Code becomes more maintainable</strong> and readable for developers</li>
+                    <li><strong>Use elements by meaning</strong>, not appearance</li>
+                    <li><strong>Test with accessibility tools</strong> to ensure proper implementation</li>
+                    <li><strong>Follow HTML5 semantic standards</strong> for consistent, future-proof code</li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="topic-nav">
+            <a href="../index.html">← Back to Main</a>
+            <a href="meta-information.html">Next: Meta Information →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Engr. Nelsonjan E. Perez, PSAU, SPCF, CCA Instructor</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links and Navigation - HTML Learning Topics</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Links and Navigation</h1>
+    </header>
+
+    <main class="topic-page">
+        <nav class="topic-nav">
+            <a href="lists.html">← Previous: Lists</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="images-media.html">Next: Images & Media →</a>
+        </nav>
+
+        <div class="topic-content">
+            <h1>Links and Navigation</h1>
+
+            <h2>Basic Links</h2>
+            <p>The <code>&lt;a&gt;</code> (anchor) element creates hyperlinks:</p>
+
+            <div class="example-box">
+                <h3>Example: Basic Link</h3>
+                <pre><code>&lt;a href="https://www.example.com"&gt;Visit Example.com&lt;/a&gt;</code></pre>
+            </div>
+
+            <h2>Link Attributes</h2>
+            <ul>
+                <li><code>href</code> - Specifies the destination URL</li>
+                <li><code>target</code> - Specifies where to open the link</li>
+                <li><code>rel</code> - Specifies the relationship between current and linked document</li>
+                <li><code>title</code> - Provides additional information (tooltip)</li>
+            </ul>
+
+            <h2>External Links</h2>
+            <p>Links to other websites:</p>
+
+            <div class="example-box">
+                <h3>Example: External Links</h3>
+                <pre><code>&lt;a href="https://www.google.com" target="_blank" rel="noopener"&gt;
+    Open Google in new tab
+&lt;/a&gt;
+
+&lt;a href="https://www.github.com" title="Visit GitHub"&gt;
+    GitHub
+&lt;/a&gt;</code></pre>
+            </div>
+
+            <h2>Internal Links</h2>
+            <p>Links to other pages within your website:</p>
+
+            <div class="example-box">
+                <h3>Example: Internal Links</h3>
+                <pre><code>&lt;a href="about.html"&gt;About Us&lt;/a&gt;
+&lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+&lt;a href="../index.html"&gt;Home&lt;/a&gt;</code></pre>
+            </div>
+
+            <h2>Anchor Links (Same Page)</h2>
+            <p>Links to sections within the same page:</p>
+
+            <div class="example-box">
+                <h3>Example: Anchor Links</h3>
+                <pre><code>&lt;!-- Link to section --&gt;
+&lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt;
+
+&lt;!-- Target section --&gt;
+&lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;
+
+&lt;!-- Back to top --&gt;
+&lt;a href="#top"&gt;Back to top&lt;/a&gt;</code></pre>
+            </div>
+
+            <h2>Email and Phone Links</h2>
+            <p>Special link types for communication:</p>
+
+            <div class="example-box">
+                <h3>Example: Contact Links</h3>
+                <pre><code>&lt;!-- Email link --&gt;
+&lt;a href="mailto:someone@example.com"&gt;Send Email&lt;/a&gt;
+
+&lt;!-- Email with subject and body --&gt;
+&lt;a href="mailto:support@example.com?subject=Help&amp;body=I need help with..."&gt;
+    Contact Support
+&lt;/a&gt;
+
+&lt;!-- Phone link --&gt;
+&lt;a href="tel:+1234567890"&gt;Call us: (123) 456-7890&lt;/a&gt;</code></pre>
+            </div>
+
+            <h2>Download Links</h2>
+            <p>Links that trigger file downloads:</p>
+
+            <div class="example-box">
+                <h3>Example: Download Links</h3>
+                <pre><code>&lt;a href="document.pdf" download&gt;Download PDF&lt;/a&gt;
+
+&lt;a href="image.jpg" download="my-image.jpg"&gt;
+    Download Image
+&lt;/a&gt;</code></pre>
+            </div>
+
+            <h2>Navigation Menus</h2>
+            <p>Organize links into navigation structures:</p>
+
+            <div class="example-box">
+                <h3>Example: Navigation Menu</h3>
+                <pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="services.html"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+
+            <h2>Breadcrumb Navigation</h2>
+            <p>Show the user's location in the site hierarchy:</p>
+
+            <div class="example-box">
+                <h3>Example: Breadcrumbs</h3>
+                <pre><code>&lt;nav aria-label="Breadcrumb"&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/products"&gt;Products&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Current Page&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+
+            <h2>Link Best Practices</h2>
+            <ul>
+                <li>Use descriptive link text (avoid "click here")</li>
+                <li>Use <code>target="_blank"</code> with <code>rel="noopener"</code> for external links</li>
+                <li>Ensure links have good color contrast</li>
+                <li>Test that all links work correctly</li>
+                <li>Use <code>title</code> attributes for additional context when helpful</li>
+                <li>Make navigation consistent across your site</li>
+            </ul>
+        </div>
+
+        <nav class="topic-nav">
+            <a href="lists.html">← Previous: Lists</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="images-media.html">Next: Images & Media →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Engr. Nelsonjan E. Perez, PSAU, SPCF, CCA Instructor</p>
+    </footer>
+</body>
+</html>

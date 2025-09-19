@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding CSS - HTML & CSS Learning Topics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Internal CSS for this page's demonstrations */
+        .method-demo {
+            background: rgba(232, 187, 23, 0.1);
+            border: 2px solid #E8BB17;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .inline-demo {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .internal-styled {
+            background-color: #0C2292;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .external-styled {
+            background-color: #E8BB17;
+            color: #0C2292;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 0;
+            border: 2px solid #0C2292;
+        }
+        .priority-demo {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .file-structure {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .pros, .cons {
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .pros {
+            background: rgba(34, 197, 94, 0.1);
+            border: 2px solid #22c55e;
+        }
+        .cons {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid #ef4444;
+        }
+        .best-practice {
+            background: rgba(12, 34, 146, 0.1);
+            border: 2px solid #0C2292;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .code-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .import-demo {
+            background: rgba(232, 187, 23, 0.05);
+            border: 1px solid #E8BB17;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Adding CSS to HTML</h1>
+    </header>
+
+    <main class="topic-page">
+        <nav class="topic-nav">
+            <a href="css-syntax.html">← Previous: CSS Syntax</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="colors-backgrounds.html">Next: Colors & Backgrounds →</a>
+        </nav>
+
+        <div class="topic-content">
+            <h1>Adding CSS to HTML</h1>
+
+            <h2>Introduction</h2>
+            <p>There are three main ways to add CSS to your HTML documents. Each method has its own use cases, advantages, and disadvantages. Understanding when and how to use each method is crucial for effective web development.</p>
+
+            <h2>Method 1: Inline CSS</h2>
+            <p>CSS written directly in HTML elements using the <code>style</code> attribute.</p>
+
+            <div class="example-box">
+                <h3>Syntax: Inline CSS</h3>
+                <pre><code>&lt;tagname style="property: value; property: value;"&gt;Content&lt;/tagname&gt;</code></pre>
+
+                <h3>Example: Inline CSS</h3>
+                <pre><code>&lt;h1 style="color: #0C2292; font-size: 2rem; text-align: center;"&gt;
+    Blue Heading
+&lt;/h1&gt;
+
+&lt;p style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+          color: white;
+          padding: 15px;
+          border-radius: 5px;"&gt;
+    This paragraph has inline styling!
+&lt;/p&gt;</code></pre>
+
+                <h4>Result:</h4>
+                <div class="method-demo">
+                    <h1 style="color: #0C2292; font-size: 2rem; text-align: center; margin: 0 0 15px 0;">Blue Heading</h1>
+                    <p class="inline-demo" style="margin: 0;">This paragraph has inline styling!</p>
+                </div>
+            </div>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Pros:</h4>
+                    <ul>
+                        <li>Highest specificity (overrides other CSS)</li>
+                        <li>Quick for testing styles</li>
+                        <li>No external file dependencies</li>
+                        <li>Immediate visual feedback</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Cons:</h4>
+                    <ul>
+                        <li>Not reusable</li>
+                        <li>Makes HTML messy and hard to read</li>
+                        <li>Difficult to maintain</li>
+                        <li>No separation of concerns</li>
+                        <li>Can't use pseudo-classes or media queries</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Method 2: Internal CSS</h2>
+            <p>CSS written inside <code>&lt;style&gt;</code> tags in the HTML document's <code>&lt;head&gt;</code> section.</p>
+
+            <div class="example-box">
+                <h3>Syntax: Internal CSS</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        selector {
+            property: value;
+            property: value;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- HTML content --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <h3>Example: Internal CSS</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        .internal-example {
+            background-color: #0C2292;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .internal-example:hover {
+            background-color: #E8BB17;
+            color: #0C2292;
+            transform: scale(1.05);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="internal-example"&gt;Styled with Internal CSS&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <h4>Result (hover to see effect):</h4>
+                <div class="method-demo">
+                    <div class="internal-styled" style="transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#E8BB17'; this.style.color='#0C2292'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='#0C2292'; this.style.color='white'; this.style.transform='scale(1)'">Styled with Internal CSS (hover me!)</div>
+                </div>
+            </div>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Pros:</h4>
+                    <ul>
+                        <li>Good for single-page styling</li>
+                        <li>Can use all CSS features</li>
+                        <li>Faster than external files (one HTTP request)</li>
+                        <li>Easy to maintain for small projects</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Cons:</h4>
+                    <ul>
+                        <li>Not reusable across multiple pages</li>
+                        <li>Increases HTML file size</li>
+                        <li>Still mixes content with presentation</li>
+                        <li>Hard to maintain for large projects</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Method 3: External CSS</h2>
+            <p>CSS written in separate <code>.css</code> files and linked to HTML using the <code>&lt;link&gt;</code> element.</p>
+
+            <div class="example-box">
+                <h3>File Structure:</h3>
+                <div class="file-structure">
+                    project-folder/
+                    ├── index.html
+                    ├── about.html
+                    ├── contact.html
+                    └── css/
+                        ├── style.css
+                        ├── navigation.css
+                        └── forms.css
+                </div>
+
+                <h3>Syntax: External CSS</h3>
+                <div class="code-comparison">
+                    <div>
+                        <h4>HTML File (index.html):</h4>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+    &lt;link rel="stylesheet" href="css/navigation.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="external-example"&gt;
+        Styled with External CSS
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                    <div>
+                        <h4>CSS File (style.css):</h4>
+                        <pre><code>.external-example {
+    background-color: #E8BB17;
+    color: #0C2292;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #0C2292;
+    transition: all 0.3s ease;
+}
+
+.external-example:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(232, 187, 23, 0.4);
+}</code></pre>
+                    </div>
+                </div>
+
+                <h4>Result:</h4>
+                <div class="method-demo">
+                    <div class="external-styled" style="transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 15px rgba(232, 187, 23, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">Styled with External CSS (hover me!)</div>
+                </div>
+            </div>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Pros:</h4>
+                    <ul>
+                        <li>Complete separation of content and presentation</li>
+                        <li>Reusable across multiple HTML pages</li>
+                        <li>Easy to maintain and update</li>
+                        <li>Better file organization</li>
+                        <li>Browser caching improves performance</li>
+                        <li>Team collaboration friendly</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Cons:</h4>
+                    <ul>
+                        <li>Requires additional HTTP request</li>
+                        <li>Slightly more complex setup</li>
+                        <li>Need to manage file paths</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>CSS Priority & Cascading Order</h2>
+            <p>When multiple CSS methods are used, the cascading order determines which styles apply:</p>
+
+            <div class="example-box">
+                <h3>Priority Order (Highest to Lowest):</h3>
+                <ol>
+                    <li><strong>Inline CSS</strong> (highest priority)</li>
+                    <li><strong>Internal CSS</strong> (medium priority)</li>
+                    <li><strong>External CSS</strong> (lowest priority)</li>
+                    <li><strong>Browser defaults</strong> (fallback)</li>
+                </ol>
+
+                <h3>Example: CSS Priority in Action</h3>
+                <pre><code>&lt;!-- External CSS: style.css --&gt;
+.priority-test { color: blue; }
+
+&lt;!-- Internal CSS --&gt;
+&lt;style&gt;
+.priority-test { color: green; }
+&lt;/style&gt;
+
+&lt;!-- HTML with inline CSS --&gt;
+&lt;p class="priority-test" style="color: red;"&gt;
+    What color will this text be?
+&lt;/p&gt;</code></pre>
+
+                <h4>Result:</h4>
+                <div class="method-demo">
+                    <p class="priority-demo" style="color: red; background-color: rgba(255, 0, 0, 0.1); border: 2px solid red;">
+                        This text is RED because inline CSS has the highest priority!
+                    </p>
+                    <p style="font-size: 0.9rem; color: #666; text-align: center; margin: 0;">
+                        (Even though external CSS says blue and internal CSS says green)
+                    </p>
+                </div>
+            </div>
+
+            <h2>Link Element Attributes</h2>
+            <p>Understanding the <code>&lt;link&gt;</code> element attributes for external CSS:</p>
+
+            <div class="example-box">
+                <h3>Link Element Syntax:</h3>
+                <pre><code>&lt;link rel="stylesheet" type="text/css" href="path/to/file.css"&gt;</code></pre>
+
+                <h3>Attributes Explained:</h3>
+                <ul>
+                    <li><code>rel="stylesheet"</code> - Specifies the relationship (required)</li>
+                    <li><code>type="text/css"</code> - MIME type (optional in HTML5)</li>
+                    <li><code>href="..."</code> - Path to the CSS file (required)</li>
+                    <li><code>media="..."</code> - Media query for conditional loading</li>
+                </ul>
+
+                <h3>Multiple CSS Files:</h3>
+                <pre><code>&lt;head&gt;
+    &lt;!-- Main stylesheet --&gt;
+    &lt;link rel="stylesheet" href="css/main.css"&gt;
+
+    &lt;!-- Navigation styles --&gt;
+    &lt;link rel="stylesheet" href="css/navigation.css"&gt;
+
+    &lt;!-- Print styles --&gt;
+    &lt;link rel="stylesheet" href="css/print.css" media="print"&gt;
+
+    &lt;!-- Mobile styles --&gt;
+    &lt;link rel="stylesheet" href="css/mobile.css" media="(max-width: 768px)"&gt;
+&lt;/head&gt;</code></pre>
+            </div>
+
+            <h2>CSS Import Method</h2>
+            <p>Another way to include CSS using the <code>@import</code> rule:</p>
+
+            <div class="example-box">
+                <h3>Using @import in CSS:</h3>
+                <pre><code>/* In your main CSS file or style tag */
+@import url('fonts.css');
+@import url('navigation.css');
+@import url('forms.css');
+
+/* Your other CSS rules */
+body {
+    font-family: Arial, sans-serif;
+}</code></pre>
+
+                <h3>Using @import in HTML:</h3>
+                <pre><code>&lt;style&gt;
+    @import url('css/main.css');
+    @import url('css/layout.css');
+&lt;/style&gt;</code></pre>
+
+                <div class="import-demo">
+                    <h4>⚠️ @import Considerations:</h4>
+                    <ul>
+                        <li><strong>Performance:</strong> Can slow page loading (blocks rendering)</li>
+                        <li><strong>Order:</strong> Must come before other CSS rules</li>
+                        <li><strong>Best Practice:</strong> Use <code>&lt;link&gt;</code> instead for better performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>File Organization Best Practices</h2>
+
+            <div class="best-practice">
+                <h3>Recommended Project Structure:</h3>
+                <div class="file-structure">
+                    website/
+                    ├── index.html
+                    ├── pages/
+                    │   ├── about.html
+                    │   └── contact.html
+                    ├── css/
+                    │   ├── main.css          /* Main styles */
+                    │   ├── layout.css        /* Layout/grid styles */
+                    │   ├── components.css    /* Reusable components */
+                    │   └── responsive.css    /* Media queries */
+                    ├── js/
+                    │   └── script.js
+                    └── images/
+                        ├── logo.png
+                        └── banner.jpg
+                </div>
+
+                <h3>CSS File Naming Conventions:</h3>
+                <ul>
+                    <li><code>main.css</code> or <code>style.css</code> - Primary stylesheet</li>
+                    <li><code>reset.css</code> or <code>normalize.css</code> - Browser reset styles</li>
+                    <li><code>layout.css</code> - Grid, flexbox, positioning</li>
+                    <li><code>components.css</code> - Buttons, cards, modals</li>
+                    <li><code>responsive.css</code> - Media queries</li>
+                    <li><code>print.css</code> - Print-specific styles</li>
+                </ul>
+            </div>
+
+            <h2>Choosing the Right Method</h2>
+
+            <div class="example-box">
+                <h3>When to Use Each Method:</h3>
+
+                <h4>🎯 Use Inline CSS for:</h4>
+                <ul>
+                    <li>Quick testing and debugging</li>
+                    <li>Email templates (limited CSS support)</li>
+                    <li>Dynamic styles generated by JavaScript</li>
+                    <li>Overriding styles temporarily</li>
+                </ul>
+
+                <h4>🎯 Use Internal CSS for:</h4>
+                <ul>
+                    <li>Single-page websites</li>
+                    <li>Page-specific styles</li>
+                    <li>Quick prototypes</li>
+                    <li>Critical above-the-fold styles</li>
+                </ul>
+
+                <h4>🎯 Use External CSS for:</h4>
+                <ul>
+                    <li>Multi-page websites (recommended)</li>
+                    <li>Production websites</li>
+                    <li>Team development projects</li>
+                    <li>When maintainability matters</li>
+                </ul>
+            </div>
+
+            <h2>Performance Considerations</h2>
+
+            <div class="best-practice">
+                <h3>Loading Performance Tips:</h3>
+                <ul>
+                    <li><strong>Minimize CSS files:</strong> Combine when possible</li>
+                    <li><strong>Load critical CSS inline:</strong> For above-the-fold content</li>
+                    <li><strong>Use media queries:</strong> Load CSS conditionally</li>
+                    <li><strong>Optimize file size:</strong> Remove unused CSS</li>
+                    <li><strong>Enable compression:</strong> Use gzip on server</li>
+                </ul>
+
+                <h3>Example: Optimized CSS Loading:</h3>
+                <pre><code>&lt;head&gt;
+    &lt;!-- Critical CSS inline for faster rendering --&gt;
+    &lt;style&gt;
+        /* Critical above-the-fold styles here */
+        body { font-family: Arial, sans-serif; }
+        .header { background: #0C2292; }
+    &lt;/style&gt;
+
+    &lt;!-- Non-critical CSS loaded asynchronously --&gt;
+    &lt;link rel="preload" href="css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'"&gt;
+    &lt;noscript&gt;&lt;link rel="stylesheet" href="css/main.css"&gt;&lt;/noscript&gt;
+&lt;/head&gt;</code></pre>
+            </div>
+
+            <h2>Common Mistakes to Avoid</h2>
+
+            <div class="example-box">
+                <h3>❌ Don't Do This:</h3>
+                <pre><code>&lt;!-- Too many inline styles --&gt;
+&lt;div style="background: red; color: white; padding: 20px; margin: 10px; border-radius: 5px; font-size: 18px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"&gt;
+    Messy HTML!
+&lt;/div&gt;
+
+&lt;!-- Missing closing style tag --&gt;
+&lt;style&gt;
+    body { background: blue; }
+&lt;!-- Missing &lt;/style&gt; tag --&gt;
+
+&lt;!-- Wrong file path --&gt;
+&lt;link rel="stylesheet" href="style.css"&gt; &lt;!-- File is in css/ folder --&gt;</code></pre>
+
+                <h3>✅ Do This Instead:</h3>
+                <pre><code>&lt;!-- Clean HTML with class --&gt;
+&lt;div class="highlight-box"&gt;
+    Clean HTML!
+&lt;/div&gt;
+
+&lt;!-- Proper CSS in external file --&gt;
+&lt;link rel="stylesheet" href="css/style.css"&gt;
+
+/* In style.css */
+.highlight-box {
+    background: #E8BB17;
+    color: #0C2292;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}</code></pre>
+            </div>
+
+            <h2>Quick Reference</h2>
+
+            <div class="method-demo">
+                <h3>CSS Methods Summary:</h3>
+                <pre><code>/* 1. INLINE CSS */
+&lt;p style="color: red;"&gt;Red text&lt;/p&gt;
+
+/* 2. INTERNAL CSS */
+&lt;style&gt;
+    p { color: blue; }
+&lt;/style&gt;
+
+/* 3. EXTERNAL CSS */
+&lt;link rel="stylesheet" href="style.css"&gt;
+
+/* 4. IMPORT CSS */
+@import url('styles.css');</code></pre>
+            </div>
+        </div>
+
+        <nav class="topic-nav">
+            <a href="css-syntax.html">← Previous: CSS Syntax</a>
+            <a href="../index.html">Main Menu</a>
+            <a href="colors-backgrounds.html">Next: Colors & Backgrounds →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Engr. Nelsonjan E. Perez, PSAU, SPCF, CCA Instructor</p>
+    </footer>
+</body>
+</html>
